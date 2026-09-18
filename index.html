@@ -1,0 +1,2185 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>호주 가족여행 플래너</title>
+<meta name="description" content="2027년 2월 19일~28일, 시드니 IN/OUT 4인 가족 호주 여행 준비물·일정·도시·예산 정리">
+<style>
+:root{
+  --bg:#f6f3ec; --surface:#fff; --surface2:#efeadf; --surface3:#e7e0d1;
+  --text:#18242a; --muted:#5f6f77; --border:#e0d9c9;
+  --accent:#0d6f86; --accent-soft:#d7edf3; --accent-ink:#07505f; --on-accent:#fff;
+  --ochre:#b4530f; --ochre-soft:#fbe6d5;
+  --green:#1a7a45; --green-soft:#d8f0e2;
+  --danger:#b3261e; --danger-soft:#fbe0de;
+  --shadow:0 1px 2px rgba(20,30,35,.06),0 8px 24px rgba(20,30,35,.06);
+  --radius:14px;
+}
+:root:not([data-theme="light"]){ color-scheme:light; }
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0e1518; --surface:#161f24; --surface2:#1c272d; --surface3:#24323a;
+    --text:#e7eef1; --muted:#9aadb5; --border:#2a3941;
+    --accent:#4fb8d4; --accent-soft:#12333d; --accent-ink:#9fdcec; --on-accent:#08181d;
+    --ochre:#e59155; --ochre-soft:#3a2416;
+    --green:#5cc287; --green-soft:#12321f;
+    --danger:#f0857d; --danger-soft:#3a1a18;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0e1518; --surface:#161f24; --surface2:#1c272d; --surface3:#24323a;
+  --text:#e7eef1; --muted:#9aadb5; --border:#2a3941;
+  --accent:#4fb8d4; --accent-soft:#12333d; --accent-ink:#9fdcec; --on-accent:#08181d;
+  --ochre:#e59155; --ochre-soft:#3a2416;
+  --green:#5cc287; --green-soft:#12321f;
+  --danger:#f0857d; --danger-soft:#3a1a18;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:74px}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:"Pretendard","Pretendard Variable",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;
+  font-size:16px; line-height:1.65; -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,h4{line-height:1.3; margin:0 0 .5em; letter-spacing:-.02em}
+h2{font-size:clamp(1.35rem,1.1rem + 1.1vw,1.9rem)}
+h3{font-size:1.12rem}
+h4{font-size:.98rem}
+p{margin:0 0 .9em}
+a{color:var(--accent); text-underline-offset:3px}
+small{font-size:.82rem}
+code{background:var(--surface2); padding:.1em .38em; border-radius:5px; font-size:.88em}
+
+.wrap{max-width:1080px; margin:0 auto; padding:0 16px}
+
+/* ---------- top bar ---------- */
+.topbar{
+  position:sticky; top:0; z-index:50; background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--border);
+}
+.topbar-in{display:flex; align-items:center; gap:12px; height:58px; max-width:1080px; margin:0 auto; padding:0 16px}
+.brand{font-weight:700; font-size:.95rem; white-space:nowrap; display:flex; align-items:center; gap:7px}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--ochre);flex:none}
+.navlinks{display:flex; gap:2px; overflow-x:auto; flex:1; scrollbar-width:none; -webkit-overflow-scrolling:touch}
+.navlinks::-webkit-scrollbar{display:none}
+.navlinks a{
+  padding:6px 10px; border-radius:8px; font-size:.86rem; color:var(--muted);
+  text-decoration:none; white-space:nowrap; font-weight:500;
+}
+.navlinks a:hover{background:var(--surface2); color:var(--text)}
+.iconbtn{
+  flex:none; width:36px; height:36px; border-radius:9px; border:1px solid var(--border);
+  background:var(--surface); color:var(--text); cursor:pointer; font-size:1rem; line-height:1;
+  display:grid; place-items:center;
+}
+.iconbtn:hover{background:var(--surface2)}
+
+/* ---------- hero ---------- */
+.hero{padding:40px 0 28px; border-bottom:1px solid var(--border)}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:7px; font-size:.78rem; font-weight:600;
+  color:var(--accent-ink); background:var(--accent-soft); padding:5px 11px; border-radius:999px;
+  letter-spacing:.02em;
+}
+.hero h1{font-size:clamp(1.8rem,1.3rem + 2.4vw,3rem); margin:14px 0 8px}
+.hero .lede{color:var(--muted); max-width:62ch; font-size:1.02rem}
+.factgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-top:22px}
+.fact{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:13px 15px; box-shadow:var(--shadow)}
+.fact .k{font-size:.74rem; color:var(--muted); font-weight:600; letter-spacing:.03em; text-transform:uppercase}
+.fact .v{font-size:1.05rem; font-weight:700; margin-top:3px}
+.fact .s{font-size:.78rem; color:var(--muted)}
+.ddaybox .v{color:var(--ochre); font-size:1.35rem}
+
+/* ---------- sections ---------- */
+section{padding:44px 0; border-bottom:1px solid var(--border)}
+.sec-head{margin-bottom:20px}
+.sec-head .num{font-size:.75rem; font-weight:700; color:var(--ochre); letter-spacing:.12em}
+.sec-head p{color:var(--muted); margin:0; max-width:70ch}
+
+.card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+.grid2{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px}
+.grid3{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px}
+
+.callout{border-left:3px solid var(--accent); background:var(--accent-soft); padding:13px 15px; border-radius:0 10px 10px 0; margin:14px 0; font-size:.93rem}
+.callout.warn{border-color:var(--ochre); background:var(--ochre-soft)}
+.callout.danger{border-color:var(--danger); background:var(--danger-soft)}
+.callout.ok{border-color:var(--green); background:var(--green-soft)}
+.callout > strong:first-child{display:block; margin-bottom:3px}
+
+.tag{display:inline-block; font-size:.74rem; font-weight:600; padding:3px 9px; border-radius:999px; background:var(--surface2); color:var(--muted); border:1px solid var(--border)}
+.tag.good{background:var(--green-soft); color:var(--green); border-color:transparent}
+.tag.mid{background:var(--ochre-soft); color:var(--ochre); border-color:transparent}
+.tag.bad{background:var(--danger-soft); color:var(--danger); border-color:transparent}
+.tag.blue{background:var(--accent-soft); color:var(--accent-ink); border-color:transparent}
+
+.tablewrap{overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--border); border-radius:var(--radius); background:var(--surface)}
+table{border-collapse:collapse; width:100%; font-size:.9rem; min-width:520px}
+th,td{padding:10px 12px; text-align:left; border-bottom:1px solid var(--border); vertical-align:top}
+th{background:var(--surface2); font-weight:700; font-size:.82rem; white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
+
+ul.clean{list-style:none; padding:0; margin:0}
+ul.clean li{padding:6px 0 6px 20px; position:relative; font-size:.93rem; border-bottom:1px solid var(--border)}
+ul.clean li:last-child{border-bottom:none}
+ul.clean li::before{content:"·"; position:absolute; left:6px; color:var(--accent); font-weight:700}
+
+/* ---------- plan tabs ---------- */
+.tabs{display:flex; gap:7px; overflow-x:auto; padding-bottom:6px; margin-bottom:16px; scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  flex:none; padding:9px 14px; border-radius:10px; border:1px solid var(--border);
+  background:var(--surface); color:var(--muted); cursor:pointer; font-size:.87rem; font-weight:600;
+  font-family:inherit; white-space:nowrap;
+}
+.tab:hover{background:var(--surface2); color:var(--text)}
+.tab[aria-selected="true"]{background:var(--accent); border-color:var(--accent); color:var(--on-accent)}
+.panel[hidden]{display:none}
+
+.planhead{display:flex; flex-wrap:wrap; gap:10px; align-items:baseline; justify-content:space-between; margin-bottom:6px}
+.planmeta{display:flex; flex-wrap:wrap; gap:6px}
+
+/* ---------- timeline ---------- */
+.tl{position:relative; margin:18px 0 0; padding-left:0}
+.day{
+  display:grid; grid-template-columns:104px 1fr; gap:16px; padding:15px 0;
+  border-top:1px solid var(--border);
+}
+.day:first-child{border-top:none}
+.daykey{position:sticky; top:70px; align-self:start}
+.daykey .dn{font-size:.72rem; font-weight:700; color:var(--ochre); letter-spacing:.08em}
+.daykey .dd{font-weight:700; font-size:1rem}
+.daykey .dw{font-size:.78rem; color:var(--muted)}
+.daybody h4{margin:0 0 6px}
+.slot{display:flex; gap:10px; padding:5px 0; font-size:.92rem}
+.slot .t{
+  flex:none; width:52px; font-size:.75rem; font-weight:700; color:var(--accent-ink);
+  background:var(--accent-soft); border-radius:6px; height:20px; display:grid; place-items:center; margin-top:3px;
+}
+.slot .t.pm{color:var(--ochre); background:var(--ochre-soft)}
+.slot .t.ev{color:var(--muted); background:var(--surface2)}
+.daynote{font-size:.83rem; color:var(--muted); margin-top:7px; padding-left:2px}
+
+/* ---------- checklist ---------- */
+.progwrap{display:flex; align-items:center; gap:12px; margin:6px 0 18px; flex-wrap:wrap}
+.progbar{flex:1; min-width:180px; height:9px; background:var(--surface3); border-radius:999px; overflow:hidden}
+.progbar > i{display:block; height:100%; width:0; background:var(--green); border-radius:999px; transition:width .25s ease}
+.progtxt{font-size:.86rem; font-weight:700; font-variant-numeric:tabular-nums}
+.btn{
+  padding:8px 14px; border-radius:9px; border:1px solid var(--border); background:var(--surface);
+  color:var(--text); font-family:inherit; font-size:.85rem; font-weight:600; cursor:pointer;
+}
+.btn:hover{background:var(--surface2)}
+.btn.primary{background:var(--accent); border-color:var(--accent); color:var(--on-accent)}
+
+.ck-cat{margin-bottom:12px; border:1px solid var(--border); border-radius:var(--radius); background:var(--surface); overflow:hidden; box-shadow:var(--shadow)}
+.ck-cat > summary{
+  cursor:pointer; padding:13px 16px; font-weight:700; display:flex; align-items:center; gap:10px;
+  list-style:none; background:var(--surface2);
+}
+.ck-cat > summary::-webkit-details-marker{display:none}
+.ck-cat > summary::after{content:"▾"; margin-left:auto; color:var(--muted); font-size:.8rem; transition:transform .2s}
+.ck-cat[open] > summary::after{transform:rotate(180deg)}
+.ck-cat .catcount{font-size:.76rem; font-weight:600; color:var(--muted); font-variant-numeric:tabular-nums}
+.ck-list{padding:6px 16px 14px}
+.ck-item{display:flex; gap:10px; align-items:flex-start; padding:7px 0; border-bottom:1px solid var(--border); font-size:.93rem}
+.ck-item:last-child{border-bottom:none}
+.ck-item input{margin-top:5px; width:17px; height:17px; accent-color:var(--green); flex:none; cursor:pointer}
+.ck-item label{cursor:pointer}
+.ck-item .why{display:block; font-size:.79rem; color:var(--muted); margin-top:1px}
+.ck-item input:checked + label{opacity:.5; text-decoration:line-through; text-decoration-thickness:1px}
+.ck-item input:checked + label .why{text-decoration:none}
+
+/* ---------- budget ---------- */
+.ctrls{display:flex; flex-wrap:wrap; gap:12px; align-items:flex-end; margin-bottom:16px}
+.field{display:flex; flex-direction:column; gap:4px}
+.field label{font-size:.76rem; font-weight:700; color:var(--muted); letter-spacing:.02em}
+select,input[type="number"]{
+  padding:8px 11px; border-radius:9px; border:1px solid var(--border); background:var(--surface);
+  color:var(--text); font-family:inherit; font-size:.9rem; min-width:150px;
+}
+.total{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; margin-top:14px; padding:15px 18px;
+  border-radius:var(--radius); background:var(--accent-soft); border:1px solid var(--border);
+}
+.total .big{font-size:1.7rem; font-weight:800; color:var(--accent-ink); font-variant-numeric:tabular-nums}
+
+/* ---------- misc ---------- */
+.pill-row{display:flex; flex-wrap:wrap; gap:6px; margin-top:8px}
+.spot{padding:11px 0; border-bottom:1px solid var(--border)}
+.spot:last-child{border-bottom:none}
+.spot .nm{font-weight:700; font-size:.96rem}
+.spot .meta{font-size:.79rem; color:var(--muted); margin-top:1px}
+.spot .ds{font-size:.89rem; margin-top:4px}
+footer{padding:30px 0 50px; color:var(--muted); font-size:.85rem}
+.tocard{display:block; text-decoration:none; color:inherit}
+.tocard:hover{border-color:var(--accent)}
+
+@media (max-width:600px){
+  .day{grid-template-columns:1fr; gap:6px}
+  .daykey{position:static; display:flex; align-items:baseline; gap:8px}
+  .brand span.full{display:none}
+}
+@media print{
+  .topbar,.tabs,.iconbtn,.btn,.ctrls{display:none !important}
+  body{background:#fff; color:#000; font-size:11pt}
+  section{page-break-inside:avoid; border-bottom:1px solid #ccc; padding:14px 0}
+  .card,.ck-cat{box-shadow:none; border:1px solid #ccc}
+  .panel[hidden]{display:block !important}
+  .ck-cat{page-break-inside:avoid}
+  details{display:block}
+  details > summary{list-style:none}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <div class="brand"><span class="dot"></span>AUS <span class="full">2027.02</span></div>
+    <nav class="navlinks">
+      <a href="#overview">개요</a>
+      <a href="#plans">여행 플랜</a>
+      <a href="#cities">도시 가이드</a>
+      <a href="#docs">비자·입국</a>
+      <a href="#prep">준비물</a>
+      <a href="#budget">예산</a>
+      <a href="#kids">아이 동반 팁</a>
+      <a href="#transport">교통</a>
+      <a href="#emergency">비상 연락</a>
+    </nav>
+    <button class="iconbtn" id="themeBtn" type="button" title="라이트/다크 전환" aria-label="라이트/다크 전환">◐</button>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow">2027.02.19 (금) → 02.28 (일) · 시드니 IN / 시드니 OUT</span>
+    <h1>호주 가족여행 플래너</h1>
+    <p class="lede">
+      4인 가족(부모 2 + 자녀 2)의 늦여름 호주 여행. 실질 현지 체류는 <strong>8박 9일</strong>입니다.
+      동선 후보 6가지를 모두 비교하고, 준비물·비자·예산·아이 동반 실전 정보를 한 페이지에 정리했습니다.
+    </p>
+
+    <div class="factgrid">
+      <div class="fact ddaybox">
+        <div class="k">D-DAY</div>
+        <div class="v" id="dday">D-…</div>
+        <div class="s">출발 2027년 2월 19일</div>
+      </div>
+      <div class="fact">
+        <div class="k">현지 체류</div>
+        <div class="v">8박 9일</div>
+        <div class="s">2/20 도착 ~ 2/28 출발</div>
+      </div>
+      <div class="fact">
+        <div class="k">가족 구성</div>
+        <div class="v">성인 2 · 아동 2</div>
+        <div class="s">남 2018년생 · 여 2020년생</div>
+      </div>
+      <div class="fact">
+        <div class="k">여행 시 나이</div>
+        <div class="v">8~9세 · 6~7세</div>
+        <div class="s">생일 여부에 따라 달라짐</div>
+      </div>
+      <div class="fact">
+        <div class="k">현지 계절</div>
+        <div class="v">늦여름</div>
+        <div class="s">시드니 24~27℃ · 자외선 극심</div>
+      </div>
+      <div class="fact">
+        <div class="k">시차</div>
+        <div class="v">+2시간</div>
+        <div class="s">시드니 서머타임(AEDT) 기준</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= OVERVIEW ================= -->
+<section id="overview">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">01</div>
+      <h2>한눈에 보기</h2>
+      <p>먼저 알고 시작하면 좋은 핵심 사실들입니다. 아래 모든 섹션의 판단 기준이 됩니다.</p>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>이 시기가 좋은 이유</h3>
+        <ul class="clean">
+          <li><strong>호주는 학기 중(Term 1)</strong> — 현지 방학이 아니라서 명소 혼잡도·항공·숙박비가 성수기 대비 낮습니다.</li>
+          <li><strong>한국은 학년 전환기</strong> — 2월 말 개학 직전이라 자녀 학사일정 부담이 가장 적습니다.</li>
+          <li><strong>시차가 +2시간뿐</strong> — 유럽·미주 대비 시차 적응 부담이 거의 없습니다.</li>
+          <li><strong>늦여름 = 물놀이 시즌</strong> — 해변·수영장·야외 액티비티가 모두 열려 있습니다.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>이 시기의 주의점</h3>
+        <ul class="clean">
+          <li><strong>자외선</strong> — 호주 한여름 UV 지수는 11+(극단). 한국식 선케어로는 부족합니다.</li>
+          <li><strong>북부(케언즈)는 우기</strong> — 2월은 연중 강수량 최대, 사이클론 가능 시기입니다.</li>
+          <li><strong>스팅어(맹독 해파리) 시즌</strong> — 퀸즐랜드 북부 해변은 11~5월 수영 제한, 스팅어수트 필수.</li>
+          <li><strong>중부 사막은 폭염</strong> — 울룰루 2월 낮 최고 38℃ 내외. 어린 자녀 동반에는 비권장.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <strong>시차 함정 하나</strong>
+      2월은 시드니·멜버른만 서머타임(AEDT, 한국 +2시간)이고, 퀸즐랜드(케언즈·골드코스트·브리즈번)는 서머타임이 없어 <strong>한국 +1시간</strong>입니다.
+      즉 시드니에서 케언즈로 이동하면 시계를 1시간 되돌려야 합니다. 국내선 예약·픽업 시간 계산에서 가장 흔한 실수입니다.
+    </div>
+
+    <h3 style="margin-top:26px">2월 하순 도시별 날씨 (평년 기준)</h3>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>도시</th><th class="num">평균 최고</th><th class="num">평균 최저</th><th class="num">월 강수</th><th>체감 / 메모</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>시드니</td><td class="num">26~27℃</td><td class="num">19~20℃</td><td class="num">약 110mm</td><td>습하고 짧은 소나기. 대체로 쾌적</td></tr>
+          <tr><td>멜버른</td><td class="num">25~26℃</td><td class="num">15~16℃</td><td class="num">약 45mm</td><td>건조하고 일교차 큼. 하루 4계절</td></tr>
+          <tr><td>골드코스트</td><td class="num">28~29℃</td><td class="num">21~22℃</td><td class="num">약 170mm</td><td>덥고 습함. 오후 소나기 잦음</td></tr>
+          <tr><td>케언즈</td><td class="num">31~32℃</td><td class="num">23~24℃</td><td class="num">약 400mm+</td><td>우기 절정. 습도 80%대, 스팅어 시즌</td></tr>
+          <tr><td>울룰루</td><td class="num">37~38℃</td><td class="num">22~23℃</td><td class="num">약 40mm</td><td>폭염. 한낮 야외활동 제한 권고</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><small>※ 평년값 기준의 참고 수치입니다. 출발 2주 전 기상청·BOM(호주 기상청) 예보로 재확인하세요.</small></p>
+  </div>
+</section>
+
+<!-- ================= PLANS ================= -->
+<section id="plans">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">02</div>
+      <h2>여행 플랜 — 6가지 안 전부 비교</h2>
+      <p>시드니 IN/OUT, 현지 8박 9일이라는 고정 조건에서 가능한 동선을 모두 펼쳤습니다. 권하지 않는 안도 근거와 함께 남겨 두었으니, 왜 빠졌는지까지 보고 결정하세요.</p>
+    </div>
+    <div class="tablewrap" style="margin-bottom:22px">
+      <table>
+        <thead>
+          <tr><th>안</th><th>구성</th><th class="num">국내선</th><th>날씨 리스크</th><th>아이 만족도</th><th>비용</th><th>총평</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>A</strong></td><td>시드니 + 케언즈</td><td class="num">왕복 1회</td><td><span class="tag bad">높음 (우기)</span></td><td><span class="tag good">매우 높음</span></td><td><span class="tag mid">중상</span></td><td>경험 밀도 1위. 날씨만 받쳐주면 최선</td></tr>
+          <tr><td><strong>B</strong></td><td>시드니 집중 + 근교</td><td class="num">없음</td><td><span class="tag good">낮음</span></td><td><span class="tag mid">중상</span></td><td><span class="tag good">가장 낮음</span></td><td>실패 확률 최저. 첫 호주로 무난</td></tr>
+          <tr><td><strong>C</strong></td><td>시드니 + 멜버른</td><td class="num">왕복 1회</td><td><span class="tag good">가장 낮음</span></td><td><span class="tag good">높음</span></td><td><span class="tag mid">중</span></td><td>펭귄·기차로 승부. 드라이브가 김</td></tr>
+          <tr><td><strong>D</strong></td><td>시드니 + 골드코스트</td><td class="num">왕복 1회</td><td><span class="tag mid">보통</span></td><td><span class="tag good">최상</span></td><td><span class="tag mid">중상</span></td><td>아이 기준 1위, 어른 기준은 아쉬움</td></tr>
+          <tr><td><strong>E</strong></td><td>시드니 + 울룰루</td><td class="num">왕복 1회</td><td><span class="tag bad">폭염</span></td><td><span class="tag mid">보통</span></td><td><span class="tag bad">높음</span></td><td>2월엔 비권장. 6~8월 재방문 추천</td></tr>
+          <tr><td><strong>F</strong></td><td>3도시 강행</td><td class="num">3구간</td><td><span class="tag bad">높음</span></td><td><span class="tag mid">보통</span></td><td><span class="tag bad">가장 높음</span></td><td>이동이 여행을 잡아먹는 구성</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout ok">
+      <strong>정리하자면</strong>
+      날씨 리스크를 감수하고 '호주다운 경험'을 원하면 <strong>A안</strong>, 아이 컨디션과 예산을 우선하면 <strong>B안</strong>,
+      둘 사이 절충이면서 실패 확률이 낮은 쪽을 원하면 <strong>C안</strong>입니다.
+      A안을 택하되 케언즈 구간에 실내 대안(쿠란다·박물관·호텔 풀)을 미리 준비해 두는 것이 현실적인 최적해입니다.
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="여행 플랜 선택">
+      <button class="tab" role="tab" id="tab-A" aria-controls="panel-A" aria-selected="true" type="button">A안 · 시드니 + 케언즈</button>
+      <button class="tab" role="tab" id="tab-B" aria-controls="panel-B" aria-selected="false" type="button">B안 · 시드니 집중 + 근교</button>
+      <button class="tab" role="tab" id="tab-C" aria-controls="panel-C" aria-selected="false" type="button">C안 · 시드니 + 멜버른</button>
+      <button class="tab" role="tab" id="tab-D" aria-controls="panel-D" aria-selected="false" type="button">D안 · 시드니 + 골드코스트</button>
+      <button class="tab" role="tab" id="tab-E" aria-controls="panel-E" aria-selected="false" type="button">E안 · 시드니 + 울룰루</button>
+      <button class="tab" role="tab" id="tab-F" aria-controls="panel-F" aria-selected="false" type="button">F안 · 3도시 강행 (시드니+케언즈+골드코스트)</button>
+    </div>
+
+    <div class="panel" id="panel-A" role="tabpanel" aria-labelledby="tab-A">
+      <div class="card">
+        <div class="planhead">
+          <h3 style="margin:0">A안 — 시드니 + 케언즈</h3>
+          <div class="planmeta"><span class="tag good">추천 1순위</span><span class="tag blue">그레이트배리어리프</span><span class="tag mid">국내선 왕복</span></div>
+        </div>
+        <p style="color:var(--muted);margin:8px 0 14px">세계유산 산호초와 열대우림을 넣는 안. 아이 인생 경험의 밀도가 가장 높지만, 2월 케언즈는 우기라 날씨 리스크를 감수해야 합니다.</p>
+        <div class="grid2">
+          <div><h4 style="color:var(--green)">장점</h4><ul class="clean">
+            <li>그레이트배리어리프 + 열대우림 + 대도시를 한 번에</li>
+            <li>퀸즐랜드라 코알라 안기 가능</li>
+            <li>쿠란다 스카이레일·시닉레일 등 아이 취향 교통수단이 많음</li>
+          </ul></div>
+          <div><h4 style="color:var(--ochre)">단점 / 리스크</h4><ul class="clean">
+            <li>2월은 케언즈 연중 강수량 최대, 사이클론 시기</li>
+            <li>스팅어 시즌이라 해변 자유 수영 제한</li>
+            <li>국내선 왕복 약 3시간 × 2회, 4인 항공료 추가</li>
+          </ul></div>
+        </div>
+      </div>
+
+      <div class="tl">
+        <div class="day">
+          <div class="daykey"><div class="dn">D0</div><div class="dd">2/19</div><div class="dw">금요일</div></div>
+          <div class="daybody">
+            <h4>인천 → 시드니</h4>
+            <div class="slot"><span class="t am">오전</span><span>집에서 출발 전 최종 점검 — 여권·ETA 승인 메일·보조배터리(기내 휴대)·아이 기내 놀거리.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>인천공항 도착. 국제선은 3시간 전 도착 권장. 환전은 소액만(현지 카드 결제가 기본).</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>야간 직항 탑승(약 10시간 20분). 이륙 후 바로 시드니 시각으로 시계 변경, 아이들 취침 유도.</span></div>
+            <div class="daynote">💡 직항 야간편 기준. 낮 출발편이면 D1 일정을 하루씩 뒤로 미루고 마지막 날을 줄이세요.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D1</div><div class="dd">2/20</div><div class="dw">토요일</div></div>
+          <div class="daybody">
+            <h4>시드니 도착 · 하버 첫인상</h4>
+            <div class="slot"><span class="t am">오전</span><span>시드니 공항 도착. 입국심사 → 수하물 → 세관·검역(신고할 식품은 반드시 신고 줄로).</span></div>
+            <div class="slot"><span class="t am">오전</span><span>숙소 이동 후 짐만 맡기기(얼리 체크인은 대체로 불가). 근처에서 가볍게 브런치.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>서큘러키 → 오페라하우스 외관 → 로열 보태닉 가든 산책 → 미세스 맥콰리 포인트 전망.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>하버 근처에서 이른 저녁. 첫날은 무조건 짧게, 20~21시 취침.</span></div>
+            <div class="daynote">💡 도착일 낮잠은 30분 이내로. 시차가 +2시간뿐이라 햇빛만 충분히 쬐면 하루면 적응됩니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D2</div><div class="dd">2/21</div><div class="dw">일요일</div></div>
+          <div class="daybody">
+            <h4>타롱가 동물원 · 달링하버</h4>
+            <div class="slot"><span class="t am">오전</span><span>서큘러키에서 페리로 타롱가 동물원(12분). 배 자체가 관광 코스.</span></div>
+            <div class="slot"><span class="t am">오전</span><span>스카이사파리 곤돌라로 정상까지 올라간 뒤 내려오며 관람 — 아이 체력 절약의 핵심.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>코알라·캥거루·웜뱃 구역, 새 공연 관람 후 페리로 복귀.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>달링하버 이동 → 달링 쿼터 놀이터(무료 물놀이·대형 미끄럼틀)에서 2시간 방목.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>달링하버 또는 신축 시드니 피시마켓에서 저녁.</span></div>
+            <div class="daynote">💡 NSW주는 코알라 안기(홀딩)가 법으로 금지입니다. 코알라를 안아보려면 퀸즐랜드(케언즈·골드코스트) 일정이 필요합니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D3</div><div class="dd">2/22</div><div class="dw">월요일</div></div>
+          <div class="daybody">
+            <h4>블루마운틴 당일</h4>
+            <div class="slot"><span class="t am">오전</span><span>이른 출발. 가는 길에 페더데일 와일드라이프 파크 — 캥거루 먹이주기·코알라 근접 관람.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>카툼바 도착. 시닉 월드 — 세계 최급경사 철도(52°), 케이블웨이, 우림 보드워크.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>에코 포인트에서 세 자매봉(Three Sisters) 전망.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>시드니 복귀(약 2시간). 차 안에서 아이들 취침 가능성 높음.</span></div>
+            <div class="daynote">💡 렌터카면 자유롭고, 한인/현지 당일투어면 운전 부담이 없습니다. 산지는 시내보다 5~8℃ 낮으니 겉옷 필수.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D4</div><div class="dd">2/23</div><div class="dw">화요일</div></div>
+          <div class="daybody">
+            <h4>시드니 → 케언즈</h4>
+            <div class="slot"><span class="t am">오전</span><span>오전 국내선(약 3시간 10분). 퀸즐랜드는 서머타임이 없어 도착 시 시계 1시간 되돌리기.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>숙소 체크인 후 케언즈 에스플러네이드 라군 — 해변 대신 이용하는 무료 대형 인공 수영장.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>케언즈 나이트 마켓 푸드코트에서 저녁.</span></div>
+            <div class="daynote">💡 케언즈 시내 해변은 갯벌+스팅어로 수영에 부적합합니다. 물놀이는 라군·호텔 풀·리프 투어로 해결하세요.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D5</div><div class="dd">2/24</div><div class="dw">수요일</div></div>
+          <div class="daybody">
+            <h4>그레이트배리어리프</h4>
+            <div class="slot"><span class="t am">오전</span><span>리프 크루즈 출항. 가족 추천은 그린 아일랜드(모래섬 + 얕은 산호, 아이 동반 최적).</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>스노클링(전원 스팅어수트 착용), 유리바닥 보트, 반잠수정 — 수영 못하는 아이도 관람 가능.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>오후 늦게 귀항. 온몸이 지치는 날이므로 저녁은 숙소 근처에서 간단히.</span></div>
+            <div class="daynote">💡 아우터 리프 폰툰 투어는 왕복 3시간 항해로 멀미 위험이 큽니다. 초등 저학년이면 그린 아일랜드가 안전한 선택.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D6</div><div class="dd">2/25</div><div class="dw">목요일</div></div>
+          <div class="daybody">
+            <h4>쿠란다 열대우림</h4>
+            <div class="slot"><span class="t am">오전</span><span>스카이레일 곤돌라로 우림 위를 통과(편도 약 1시간 30분, 중간 정거장 하차 산책).</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>쿠란다 마을 — 나비 보호구역, 코알라 가든(코알라 안기 가능), 재래시장.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>돌아올 때는 쿠란다 시닉 레일웨이 기차로 — 폭포·협곡 절경.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>케언즈 복귀.</span></div>
+            <div class="daynote">💡 스카이레일↔기차 편도씩 조합이 정석입니다. 왕복 같은 수단은 아이들이 지루해합니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D7</div><div class="dd">2/26</div><div class="dw">금요일</div></div>
+          <div class="daybody">
+            <h4>케언즈 → 시드니</h4>
+            <div class="slot"><span class="t am">오전</span><span>오전 여유: 팜 코브 산책 또는 하틀리스 크로커다일 어드벤처(악어 쇼).</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>오후 국내선으로 시드니 복귀. 시계 1시간 앞으로.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>시드니 숙소 체크인 후 근처에서 저녁.</span></div>
+            <div class="daynote">💡 같은 날 오전 액티비티 + 오후 비행은 빠듯합니다. 공항 3시간 전 출발 기준으로 역산하세요.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D8</div><div class="dd">2/27</div><div class="dw">토요일</div></div>
+          <div class="daybody">
+            <h4>본다이 · 시내 마무리</h4>
+            <div class="slot"><span class="t am">오전</span><span>본다이 비치 — 아이용 본다이 아이스버그 풀(바닷물 수영장) 또는 백사장 물놀이.</span></div>
+            <div class="slot"><span class="t am">오전</span><span>본다이 → 브론테 해안 산책로(약 2km, 유모차 일부 구간 가능). 쿠지까지 6km는 아이 동반 시 무리.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>QVB·피트스트리트 몰 쇼핑, 시드니 타워 아이 전망대(선택).</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>마지막 저녁 — 하버 뷰 레스토랑 또는 숙소 근처 캐주얼.</span></div>
+            <div class="daynote">💡 호주 해변은 반드시 노란·빨간 깃발 사이에서만 수영. 이안류(rip current)가 강합니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D9</div><div class="dd">2/28</div><div class="dw">일요일</div></div>
+          <div class="daybody">
+            <h4>시드니 → 인천</h4>
+            <div class="slot"><span class="t am">오전</span><span>오전 출국편 기준 국제선 3시간 전 공항 도착. 숙소 체크아웃은 보통 10시.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>면세 구역에서 마지막 기념품. 기내 반입 액체 100ml 규정 재확인.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>같은 날 저녁 인천 도착(시차 -2시간). 다음 날 여유를 하루 두면 아이들 회복이 쉽습니다.</span></div>
+            <div class="daynote">💡 귀국 당일 아침 일정을 넣지 마세요. 공항 이동 + 4인 체크인은 생각보다 오래 걸립니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-B" role="tabpanel" aria-labelledby="tab-B" hidden>
+      <div class="card">
+        <div class="planhead">
+          <h3 style="margin:0">B안 — 시드니 집중 + 근교</h3>
+          <div class="planmeta"><span class="tag good">추천 2순위</span><span class="tag blue">이동 최소</span><span class="tag good">가성비</span></div>
+        </div>
+        <p style="color:var(--muted);margin:8px 0 14px">비행기를 한 번도 더 타지 않는 안. 짐을 한 번만 풀고 매일 당일치기로 나갑니다. 7세 전후 자녀 동반에는 사실상 가장 실패 확률이 낮은 구성입니다.</p>
+        <div class="grid2">
+          <div><h4 style="color:var(--green)">장점</h4><ul class="clean">
+            <li>국내선 비용·시간 0 — 예산이 가장 낮음</li>
+            <li>숙소 1곳 고정, 짐 정리 스트레스 없음</li>
+            <li>날씨가 나쁜 날 실내 대안이 압도적으로 많음</li>
+          </ul></div>
+          <div><h4 style="color:var(--ochre)">단점 / 리스크</h4><ul class="clean">
+            <li>산호초·열대우림 같은 &#x27;호주다운&#x27; 대자연이 빠짐</li>
+            <li>코알라 안기 불가(NSW 금지)</li>
+            <li>&#x27;한 번뿐인 호주&#x27;라는 아쉬움이 남을 수 있음</li>
+          </ul></div>
+        </div>
+      </div>
+
+      <div class="tl">
+        <div class="day">
+          <div class="daykey"><div class="dn">D0</div><div class="dd">2/19</div><div class="dw">금요일</div></div>
+          <div class="daybody">
+            <h4>인천 → 시드니</h4>
+            <div class="slot"><span class="t am">오전</span><span>집에서 출발 전 최종 점검 — 여권·ETA 승인 메일·보조배터리(기내 휴대)·아이 기내 놀거리.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>인천공항 도착. 국제선은 3시간 전 도착 권장. 환전은 소액만(현지 카드 결제가 기본).</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>야간 직항 탑승(약 10시간 20분). 이륙 후 바로 시드니 시각으로 시계 변경, 아이들 취침 유도.</span></div>
+            <div class="daynote">💡 직항 야간편 기준. 낮 출발편이면 D1 일정을 하루씩 뒤로 미루고 마지막 날을 줄이세요.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D1</div><div class="dd">2/20</div><div class="dw">토요일</div></div>
+          <div class="daybody">
+            <h4>시드니 도착 · 하버 첫인상</h4>
+            <div class="slot"><span class="t am">오전</span><span>시드니 공항 도착. 입국심사 → 수하물 → 세관·검역(신고할 식품은 반드시 신고 줄로).</span></div>
+            <div class="slot"><span class="t am">오전</span><span>숙소 이동 후 짐만 맡기기(얼리 체크인은 대체로 불가). 근처에서 가볍게 브런치.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>서큘러키 → 오페라하우스 외관 → 로열 보태닉 가든 산책 → 미세스 맥콰리 포인트 전망.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>하버 근처에서 이른 저녁. 첫날은 무조건 짧게, 20~21시 취침.</span></div>
+            <div class="daynote">💡 도착일 낮잠은 30분 이내로. 시차가 +2시간뿐이라 햇빛만 충분히 쬐면 하루면 적응됩니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D2</div><div class="dd">2/21</div><div class="dw">일요일</div></div>
+          <div class="daybody">
+            <h4>타롱가 동물원 · 달링하버</h4>
+            <div class="slot"><span class="t am">오전</span><span>서큘러키에서 페리로 타롱가 동물원(12분). 배 자체가 관광 코스.</span></div>
+            <div class="slot"><span class="t am">오전</span><span>스카이사파리 곤돌라로 정상까지 올라간 뒤 내려오며 관람 — 아이 체력 절약의 핵심.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>코알라·캥거루·웜뱃 구역, 새 공연 관람 후 페리로 복귀.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>달링하버 이동 → 달링 쿼터 놀이터(무료 물놀이·대형 미끄럼틀)에서 2시간 방목.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>달링하버 또는 신축 시드니 피시마켓에서 저녁.</span></div>
+            <div class="daynote">💡 NSW주는 코알라 안기(홀딩)가 법으로 금지입니다. 코알라를 안아보려면 퀸즐랜드(케언즈·골드코스트) 일정이 필요합니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D3</div><div class="dd">2/22</div><div class="dw">월요일</div></div>
+          <div class="daybody">
+            <h4>블루마운틴 당일</h4>
+            <div class="slot"><span class="t am">오전</span><span>이른 출발. 가는 길에 페더데일 와일드라이프 파크 — 캥거루 먹이주기·코알라 근접 관람.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>카툼바 도착. 시닉 월드 — 세계 최급경사 철도(52°), 케이블웨이, 우림 보드워크.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>에코 포인트에서 세 자매봉(Three Sisters) 전망.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>시드니 복귀(약 2시간). 차 안에서 아이들 취침 가능성 높음.</span></div>
+            <div class="daynote">💡 렌터카면 자유롭고, 한인/현지 당일투어면 운전 부담이 없습니다. 산지는 시내보다 5~8℃ 낮으니 겉옷 필수.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D4</div><div class="dd">2/23</div><div class="dw">화요일</div></div>
+          <div class="daybody">
+            <h4>포트 스티븐스 당일</h4>
+            <div class="slot"><span class="t am">오전</span><span>시드니 출발(약 2시간 30분). 안나베이 도착.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>스톡턴 사구에서 4WD 투어 + 샌드보딩 — 초등 자녀 인생 사진 코스.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>넬슨베이에서 돌고래 워칭 크루즈(약 1시간 30분, 연중 서식).</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>시드니 복귀.</span></div>
+            <div class="daynote">💡 6세 전후 아이는 샌드보딩을 보호자와 함께 타는 방식이 안전합니다. 모래가 매우 뜨거우니 신발 필수.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D5</div><div class="dd">2/24</div><div class="dw">수요일</div></div>
+          <div class="daybody">
+            <h4>맨리 페리 · 수족관</h4>
+            <div class="slot"><span class="t am">오전</span><span>서큘러키 → 맨리 페리(30분). 오페라하우스·하버브리지를 바다에서 보는 최고 가성비 코스.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>맨리 비치·코르소 거리, 시라이프 맨리(소규모 수족관).</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>복귀 후 시드니 시라이프 수족관 또는 와일드라이프 시드니(달링하버, 콤보권 유리).</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>루나 파크 시드니 야간(입장 무료, 놀이기구는 별도권) — 아이들 반응 최고.</span></div>
+            <div class="daynote">💡 오팔카드 일일 상한 요금이 적용되므로, 페리를 여러 번 타도 하루 요금은 상한선에서 멈춥니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D6</div><div class="dd">2/25</div><div class="dw">목요일</div></div>
+          <div class="daybody">
+            <h4>헌터밸리 또는 실내 데이</h4>
+            <div class="slot"><span class="t am">오전</span><span>옵션 A: 헌터밸리 — 헌터밸리 가든(12개 테마 정원, 아이 동선 좋음), 치즈·초콜릿 공방.</span></div>
+            <div class="slot"><span class="t am">오전</span><span>옵션 B: 비 예보면 파워하우스/해양박물관 + 실내 놀이시설로 전환.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>돌아오는 길에 대형 쇼핑센터 들러 기념품·간식 보급.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>숙소에서 직접 요리하는 저녁(아파트먼트형 숙소의 최대 장점).</span></div>
+            <div class="daynote">💡 와이너리는 아이 동반 시 정원·먹거리 중심으로만 구성하세요. 시음 중심 투어는 부적합합니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D7</div><div class="dd">2/26</div><div class="dw">금요일</div></div>
+          <div class="daybody">
+            <h4>본다이 · 시내 마무리</h4>
+            <div class="slot"><span class="t am">오전</span><span>본다이 비치 — 아이용 본다이 아이스버그 풀(바닷물 수영장) 또는 백사장 물놀이.</span></div>
+            <div class="slot"><span class="t am">오전</span><span>본다이 → 브론테 해안 산책로(약 2km, 유모차 일부 구간 가능). 쿠지까지 6km는 아이 동반 시 무리.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>QVB·피트스트리트 몰 쇼핑, 시드니 타워 아이 전망대(선택).</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>마지막 저녁 — 하버 뷰 레스토랑 또는 숙소 근처 캐주얼.</span></div>
+            <div class="daynote">💡 호주 해변은 반드시 노란·빨간 깃발 사이에서만 수영. 이안류(rip current)가 강합니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D8</div><div class="dd">2/27</div><div class="dw">토요일</div></div>
+          <div class="daybody">
+            <h4>시드니 자유일 · 예비일</h4>
+            <div class="slot"><span class="t am">오전</span><span>옵션 A: 호주 국립해양박물관(잠수함·군함 내부 탐험) — 비 오는 날 최고의 대안.</span></div>
+            <div class="slot"><span class="t am">오전</span><span>옵션 B: 시드니 올림픽 파크 또는 센테니얼 파크 자전거.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>옵션 C: 캔버라 당일(편도 3시간) — 퀘스타콘 과학관은 아이 만족도 최상, 단 이동이 깁니다.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>숙소 근처 마트(Coles·Woolworths) 장보기 + 숙소 저녁 — 외식비 절감 포인트.</span></div>
+            <div class="daynote">💡 9일 중 하루는 반드시 예비일로 비워두세요. 날씨·컨디션·놓친 일정을 흡수하는 완충 장치입니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D9</div><div class="dd">2/28</div><div class="dw">일요일</div></div>
+          <div class="daybody">
+            <h4>시드니 → 인천</h4>
+            <div class="slot"><span class="t am">오전</span><span>오전 출국편 기준 국제선 3시간 전 공항 도착. 숙소 체크아웃은 보통 10시.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>면세 구역에서 마지막 기념품. 기내 반입 액체 100ml 규정 재확인.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>같은 날 저녁 인천 도착(시차 -2시간). 다음 날 여유를 하루 두면 아이들 회복이 쉽습니다.</span></div>
+            <div class="daynote">💡 귀국 당일 아침 일정을 넣지 마세요. 공항 이동 + 4인 체크인은 생각보다 오래 걸립니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-C" role="tabpanel" aria-labelledby="tab-C" hidden>
+      <div class="card">
+        <div class="planhead">
+          <h3 style="margin:0">C안 — 시드니 + 멜버른</h3>
+          <div class="planmeta"><span class="tag good">날씨 안정</span><span class="tag blue">자연 경관</span><span class="tag mid">장거리 드라이브</span></div>
+        </div>
+        <p style="color:var(--muted);margin:8px 0 14px">그레이트 오션 로드와 필립 아일랜드 펭귄 퍼레이드를 넣는 안. 2월 날씨가 가장 안정적이고, 펭귄은 아이 만족도가 매우 높습니다.</p>
+        <div class="grid2">
+          <div><h4 style="color:var(--green)">장점</h4><ul class="clean">
+            <li>2월 강수량이 가장 적어 일정 취소 위험이 낮음</li>
+            <li>필립 아일랜드 펭귄 퍼레이드 — 아동 만족도 최상위</li>
+            <li>푸핑 빌리 증기기관차 등 이동 자체가 놀이</li>
+          </ul></div>
+          <div><h4 style="color:var(--ochre)">단점 / 리스크</h4><ul class="clean">
+            <li>그레이트 오션 로드 당일치기는 왕복 12시간으로 아이에게 가혹</li>
+            <li>도심 관광은 시드니와 성격이 겹침</li>
+            <li>해수욕에는 물이 차가움</li>
+          </ul></div>
+        </div>
+      </div>
+
+      <div class="tl">
+        <div class="day">
+          <div class="daykey"><div class="dn">D0</div><div class="dd">2/19</div><div class="dw">금요일</div></div>
+          <div class="daybody">
+            <h4>인천 → 시드니</h4>
+            <div class="slot"><span class="t am">오전</span><span>집에서 출발 전 최종 점검 — 여권·ETA 승인 메일·보조배터리(기내 휴대)·아이 기내 놀거리.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>인천공항 도착. 국제선은 3시간 전 도착 권장. 환전은 소액만(현지 카드 결제가 기본).</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>야간 직항 탑승(약 10시간 20분). 이륙 후 바로 시드니 시각으로 시계 변경, 아이들 취침 유도.</span></div>
+            <div class="daynote">💡 직항 야간편 기준. 낮 출발편이면 D1 일정을 하루씩 뒤로 미루고 마지막 날을 줄이세요.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D1</div><div class="dd">2/20</div><div class="dw">토요일</div></div>
+          <div class="daybody">
+            <h4>시드니 도착 · 하버 첫인상</h4>
+            <div class="slot"><span class="t am">오전</span><span>시드니 공항 도착. 입국심사 → 수하물 → 세관·검역(신고할 식품은 반드시 신고 줄로).</span></div>
+            <div class="slot"><span class="t am">오전</span><span>숙소 이동 후 짐만 맡기기(얼리 체크인은 대체로 불가). 근처에서 가볍게 브런치.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>서큘러키 → 오페라하우스 외관 → 로열 보태닉 가든 산책 → 미세스 맥콰리 포인트 전망.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>하버 근처에서 이른 저녁. 첫날은 무조건 짧게, 20~21시 취침.</span></div>
+            <div class="daynote">💡 도착일 낮잠은 30분 이내로. 시차가 +2시간뿐이라 햇빛만 충분히 쬐면 하루면 적응됩니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D2</div><div class="dd">2/21</div><div class="dw">일요일</div></div>
+          <div class="daybody">
+            <h4>타롱가 동물원 · 달링하버</h4>
+            <div class="slot"><span class="t am">오전</span><span>서큘러키에서 페리로 타롱가 동물원(12분). 배 자체가 관광 코스.</span></div>
+            <div class="slot"><span class="t am">오전</span><span>스카이사파리 곤돌라로 정상까지 올라간 뒤 내려오며 관람 — 아이 체력 절약의 핵심.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>코알라·캥거루·웜뱃 구역, 새 공연 관람 후 페리로 복귀.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>달링하버 이동 → 달링 쿼터 놀이터(무료 물놀이·대형 미끄럼틀)에서 2시간 방목.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>달링하버 또는 신축 시드니 피시마켓에서 저녁.</span></div>
+            <div class="daynote">💡 NSW주는 코알라 안기(홀딩)가 법으로 금지입니다. 코알라를 안아보려면 퀸즐랜드(케언즈·골드코스트) 일정이 필요합니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D3</div><div class="dd">2/22</div><div class="dw">월요일</div></div>
+          <div class="daybody">
+            <h4>블루마운틴 당일</h4>
+            <div class="slot"><span class="t am">오전</span><span>이른 출발. 가는 길에 페더데일 와일드라이프 파크 — 캥거루 먹이주기·코알라 근접 관람.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>카툼바 도착. 시닉 월드 — 세계 최급경사 철도(52°), 케이블웨이, 우림 보드워크.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>에코 포인트에서 세 자매봉(Three Sisters) 전망.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>시드니 복귀(약 2시간). 차 안에서 아이들 취침 가능성 높음.</span></div>
+            <div class="daynote">💡 렌터카면 자유롭고, 한인/현지 당일투어면 운전 부담이 없습니다. 산지는 시내보다 5~8℃ 낮으니 겉옷 필수.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D4</div><div class="dd">2/23</div><div class="dw">화요일</div></div>
+          <div class="daybody">
+            <h4>시드니 → 멜버른</h4>
+            <div class="slot"><span class="t am">오전</span><span>오전 국내선(약 1시간 35분). 멜버른도 서머타임이라 시차 변화 없음.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>퀸 빅토리아 마켓 — 간식 투어. 유레카 스카이덱 88층 전망.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>호시어 레인 그래피티 골목, 야라강 산책.</span></div>
+            <div class="daynote">💡 멜버른 시내 트램 프리 구역(Free Tram Zone) 안에 숙소를 잡으면 이동비가 사실상 0이 됩니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D5</div><div class="dd">2/24</div><div class="dw">수요일</div></div>
+          <div class="daybody">
+            <h4>그레이트 오션 로드</h4>
+            <div class="slot"><span class="t am">오전</span><span>이른 출발. 벨스비치 → 로른 → 케넷리버(야생 코알라·앵무새).</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>12사도 바위, 로크아드 협곡. 헬기 투어는 선택.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>내륙 고속도로로 복귀(약 3시간) — 총 12시간 코스.</span></div>
+            <div class="daynote">💡 1박 2일로 나누면 아이 부담이 절반입니다. 당일로 갈 거면 반드시 차량 뒷좌석 놀거리·간식을 준비하세요.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D6</div><div class="dd">2/25</div><div class="dw">목요일</div></div>
+          <div class="daybody">
+            <h4>필립 아일랜드</h4>
+            <div class="slot"><span class="t am">오전</span><span>늦은 출발(펭귄은 해질 무렵). 코알라 보호센터 보드워크에서 야생 코알라 관찰.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>처칠 아일랜드 농장 — 양털깎기·소몰이 시연. 노비스 센터 해안 산책.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>펭귄 퍼레이드 — 리틀펭귄 수백 마리가 바다에서 굴로 돌아오는 장면 관람.</span></div>
+            <div class="daynote">💡 펭귄 관람석은 야외이고 해가 지면 급격히 추워집니다. 한여름이라도 긴팔·담요 필수. 촬영은 전면 금지입니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D7</div><div class="dd">2/26</div><div class="dw">금요일</div></div>
+          <div class="daybody">
+            <h4>멜버른 → 시드니</h4>
+            <div class="slot"><span class="t am">오전</span><span>푸핑 빌리 증기기관차(창밖으로 다리 내놓고 타는 그 기차) 또는 멜버른 동물원.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>브라이튼 비치 배싱 박스(알록달록 해변 오두막) 사진, 세인트킬다.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>오후~저녁 국내선으로 시드니 복귀.</span></div>
+            <div class="daynote">💡 세인트킬다 방파제에서는 해질 무렵 야생 리틀펭귄을 무료로 볼 수 있습니다(필립 아일랜드 대안).</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D8</div><div class="dd">2/27</div><div class="dw">토요일</div></div>
+          <div class="daybody">
+            <h4>본다이 · 시내 마무리</h4>
+            <div class="slot"><span class="t am">오전</span><span>본다이 비치 — 아이용 본다이 아이스버그 풀(바닷물 수영장) 또는 백사장 물놀이.</span></div>
+            <div class="slot"><span class="t am">오전</span><span>본다이 → 브론테 해안 산책로(약 2km, 유모차 일부 구간 가능). 쿠지까지 6km는 아이 동반 시 무리.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>QVB·피트스트리트 몰 쇼핑, 시드니 타워 아이 전망대(선택).</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>마지막 저녁 — 하버 뷰 레스토랑 또는 숙소 근처 캐주얼.</span></div>
+            <div class="daynote">💡 호주 해변은 반드시 노란·빨간 깃발 사이에서만 수영. 이안류(rip current)가 강합니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D9</div><div class="dd">2/28</div><div class="dw">일요일</div></div>
+          <div class="daybody">
+            <h4>시드니 → 인천</h4>
+            <div class="slot"><span class="t am">오전</span><span>오전 출국편 기준 국제선 3시간 전 공항 도착. 숙소 체크아웃은 보통 10시.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>면세 구역에서 마지막 기념품. 기내 반입 액체 100ml 규정 재확인.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>같은 날 저녁 인천 도착(시차 -2시간). 다음 날 여유를 하루 두면 아이들 회복이 쉽습니다.</span></div>
+            <div class="daynote">💡 귀국 당일 아침 일정을 넣지 마세요. 공항 이동 + 4인 체크인은 생각보다 오래 걸립니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-D" role="tabpanel" aria-labelledby="tab-D" hidden>
+      <div class="card">
+        <div class="planhead">
+          <h3 style="margin:0">D안 — 시드니 + 골드코스트</h3>
+          <div class="planmeta"><span class="tag good">아이 만족도 최상</span><span class="tag blue">테마파크</span><span class="tag mid">교육적 요소 적음</span></div>
+        </div>
+        <p style="color:var(--muted);margin:8px 0 14px">무비월드·씨월드 등 테마파크와 코알라 안기를 넣는 안. 8세·6세 아이의 &#x27;재미&#x27; 기준으로는 6개 안 중 1위입니다.</p>
+        <div class="grid2">
+          <div><h4 style="color:var(--green)">장점</h4><ul class="clean">
+            <li>초등 저학년이 가장 좋아하는 구성</li>
+            <li>커럼빈/론파인에서 코알라 안기 가능(퀸즐랜드)</li>
+            <li>비행 1시간 25분으로 국내 이동 부담이 적음</li>
+          </ul></div>
+          <div><h4 style="color:var(--ochre)">단점 / 리스크</h4><ul class="clean">
+            <li>테마파크는 한국·일본에서도 가능한 경험</li>
+            <li>4인 테마파크 입장료 부담이 큼</li>
+            <li>2월 오후 소나기·습도가 높음</li>
+          </ul></div>
+        </div>
+      </div>
+
+      <div class="tl">
+        <div class="day">
+          <div class="daykey"><div class="dn">D0</div><div class="dd">2/19</div><div class="dw">금요일</div></div>
+          <div class="daybody">
+            <h4>인천 → 시드니</h4>
+            <div class="slot"><span class="t am">오전</span><span>집에서 출발 전 최종 점검 — 여권·ETA 승인 메일·보조배터리(기내 휴대)·아이 기내 놀거리.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>인천공항 도착. 국제선은 3시간 전 도착 권장. 환전은 소액만(현지 카드 결제가 기본).</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>야간 직항 탑승(약 10시간 20분). 이륙 후 바로 시드니 시각으로 시계 변경, 아이들 취침 유도.</span></div>
+            <div class="daynote">💡 직항 야간편 기준. 낮 출발편이면 D1 일정을 하루씩 뒤로 미루고 마지막 날을 줄이세요.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D1</div><div class="dd">2/20</div><div class="dw">토요일</div></div>
+          <div class="daybody">
+            <h4>시드니 도착 · 하버 첫인상</h4>
+            <div class="slot"><span class="t am">오전</span><span>시드니 공항 도착. 입국심사 → 수하물 → 세관·검역(신고할 식품은 반드시 신고 줄로).</span></div>
+            <div class="slot"><span class="t am">오전</span><span>숙소 이동 후 짐만 맡기기(얼리 체크인은 대체로 불가). 근처에서 가볍게 브런치.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>서큘러키 → 오페라하우스 외관 → 로열 보태닉 가든 산책 → 미세스 맥콰리 포인트 전망.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>하버 근처에서 이른 저녁. 첫날은 무조건 짧게, 20~21시 취침.</span></div>
+            <div class="daynote">💡 도착일 낮잠은 30분 이내로. 시차가 +2시간뿐이라 햇빛만 충분히 쬐면 하루면 적응됩니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D2</div><div class="dd">2/21</div><div class="dw">일요일</div></div>
+          <div class="daybody">
+            <h4>타롱가 동물원 · 달링하버</h4>
+            <div class="slot"><span class="t am">오전</span><span>서큘러키에서 페리로 타롱가 동물원(12분). 배 자체가 관광 코스.</span></div>
+            <div class="slot"><span class="t am">오전</span><span>스카이사파리 곤돌라로 정상까지 올라간 뒤 내려오며 관람 — 아이 체력 절약의 핵심.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>코알라·캥거루·웜뱃 구역, 새 공연 관람 후 페리로 복귀.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>달링하버 이동 → 달링 쿼터 놀이터(무료 물놀이·대형 미끄럼틀)에서 2시간 방목.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>달링하버 또는 신축 시드니 피시마켓에서 저녁.</span></div>
+            <div class="daynote">💡 NSW주는 코알라 안기(홀딩)가 법으로 금지입니다. 코알라를 안아보려면 퀸즐랜드(케언즈·골드코스트) 일정이 필요합니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D3</div><div class="dd">2/22</div><div class="dw">월요일</div></div>
+          <div class="daybody">
+            <h4>블루마운틴 당일</h4>
+            <div class="slot"><span class="t am">오전</span><span>이른 출발. 가는 길에 페더데일 와일드라이프 파크 — 캥거루 먹이주기·코알라 근접 관람.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>카툼바 도착. 시닉 월드 — 세계 최급경사 철도(52°), 케이블웨이, 우림 보드워크.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>에코 포인트에서 세 자매봉(Three Sisters) 전망.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>시드니 복귀(약 2시간). 차 안에서 아이들 취침 가능성 높음.</span></div>
+            <div class="daynote">💡 렌터카면 자유롭고, 한인/현지 당일투어면 운전 부담이 없습니다. 산지는 시내보다 5~8℃ 낮으니 겉옷 필수.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D4</div><div class="dd">2/23</div><div class="dw">화요일</div></div>
+          <div class="daybody">
+            <h4>시드니 → 골드코스트</h4>
+            <div class="slot"><span class="t am">오전</span><span>오전 국내선(약 1시간 25분). 퀸즐랜드 도착, 시계 1시간 되돌리기.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>서퍼스 파라다이스 해변 — 파도가 크니 깃발 구역 엄수.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>스카이포인트 전망대에서 해안선 야경.</span></div>
+            <div class="daynote">💡 테마파크 인접 숙소 vs 해변 숙소 중 택일. 4인 가족은 주방 있는 아파트먼트형이 식비에서 유리합니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D5</div><div class="dd">2/24</div><div class="dw">수요일</div></div>
+          <div class="daybody">
+            <h4>워너브라더스 무비월드</h4>
+            <div class="slot"><span class="t am">오전</span><span>개장과 함께 입장. 슈퍼히어로 퍼레이드·스턴트 드라이버 쇼 시간표부터 확인.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>키즈 구역(스쿠비두, 루니툰) 중심으로. 대형 코스터는 신장 제한에 걸릴 수 있음.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>숙소 복귀 후 휴식. 테마파크 다음 날은 일정을 가볍게.</span></div>
+            <div class="daynote">💡 드림월드(동물원 결합형)와 택일해도 좋습니다. 여러 파크를 묶는 멀티 패스는 일정이 빡빡해질 수 있으니 주의.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D6</div><div class="dd">2/25</div><div class="dw">목요일</div></div>
+          <div class="daybody">
+            <h4>씨월드 + 커럼빈</h4>
+            <div class="slot"><span class="t am">오전</span><span>씨월드 — 돌고래·물개 쇼, 펭귄 구역, 워터파크형 놀이기구.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>커럼빈 야생동물 보호구역 — 코알라 안기, 야생 앵무새 먹이주기, 원주민 공연.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>해변가 저녁.</span></div>
+            <div class="daynote">💡 코알라 안기는 동물 복지 규정상 하루 허용 시간·마리당 횟수가 제한됩니다. 현장에서 시간대 예약을 먼저 하세요.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D7</div><div class="dd">2/26</div><div class="dw">금요일</div></div>
+          <div class="daybody">
+            <h4>골드코스트 → 시드니</h4>
+            <div class="slot"><span class="t am">오전</span><span>오전: 탬보린 마운틴 스카이워크 또는 해변 마지막 물놀이.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>오후 국내선으로 시드니 복귀.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>시드니 마지막 저녁.</span></div>
+            <div class="daynote">💡 브리즈번 공항을 쓰면 론 파인 코알라 보호구역(세계 최대·최초)을 가는 길에 넣을 수 있습니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D8</div><div class="dd">2/27</div><div class="dw">토요일</div></div>
+          <div class="daybody">
+            <h4>본다이 · 시내 마무리</h4>
+            <div class="slot"><span class="t am">오전</span><span>본다이 비치 — 아이용 본다이 아이스버그 풀(바닷물 수영장) 또는 백사장 물놀이.</span></div>
+            <div class="slot"><span class="t am">오전</span><span>본다이 → 브론테 해안 산책로(약 2km, 유모차 일부 구간 가능). 쿠지까지 6km는 아이 동반 시 무리.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>QVB·피트스트리트 몰 쇼핑, 시드니 타워 아이 전망대(선택).</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>마지막 저녁 — 하버 뷰 레스토랑 또는 숙소 근처 캐주얼.</span></div>
+            <div class="daynote">💡 호주 해변은 반드시 노란·빨간 깃발 사이에서만 수영. 이안류(rip current)가 강합니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D9</div><div class="dd">2/28</div><div class="dw">일요일</div></div>
+          <div class="daybody">
+            <h4>시드니 → 인천</h4>
+            <div class="slot"><span class="t am">오전</span><span>오전 출국편 기준 국제선 3시간 전 공항 도착. 숙소 체크아웃은 보통 10시.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>면세 구역에서 마지막 기념품. 기내 반입 액체 100ml 규정 재확인.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>같은 날 저녁 인천 도착(시차 -2시간). 다음 날 여유를 하루 두면 아이들 회복이 쉽습니다.</span></div>
+            <div class="daynote">💡 귀국 당일 아침 일정을 넣지 마세요. 공항 이동 + 4인 체크인은 생각보다 오래 걸립니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-E" role="tabpanel" aria-labelledby="tab-E" hidden>
+      <div class="card">
+        <div class="planhead">
+          <h3 style="margin:0">E안 — 시드니 + 울룰루</h3>
+          <div class="planmeta"><span class="tag bad">2월 비권장</span><span class="tag bad">폭염 위험</span><span class="tag mid">비용 높음</span></div>
+        </div>
+        <p style="color:var(--muted);margin:8px 0 14px">붉은 사막 한가운데의 울룰루(에어즈록)를 넣는 안. 경험의 깊이는 최고 수준이지만, 2월은 낮 최고 38℃ 내외의 폭염기라 6~9세 자녀 동반에는 권하지 않습니다.</p>
+        <div class="grid2">
+          <div><h4 style="color:var(--green)">장점</h4><ul class="clean">
+            <li>다른 곳에서 대체 불가능한 풍경과 원주민 문화</li>
+            <li>필드 오브 라이트 등 야간 콘텐츠가 강렬</li>
+            <li>건조해서 습한 더위보다는 견딜 만함</li>
+          </ul></div>
+          <div><h4 style="color:var(--ochre)">단점 / 리스크</h4><ul class="clean">
+            <li>2월 낮 야외활동은 안전상 제한되는 수준의 더위</li>
+            <li>숙소가 리조트 한 곳뿐이라 요금이 매우 높음</li>
+            <li>국내선 3시간 + 오지 특성상 예비 대안이 없음</li>
+          </ul></div>
+        </div>
+      </div>
+
+      <div class="tl">
+        <div class="day">
+          <div class="daykey"><div class="dn">D0</div><div class="dd">2/19</div><div class="dw">금요일</div></div>
+          <div class="daybody">
+            <h4>인천 → 시드니</h4>
+            <div class="slot"><span class="t am">오전</span><span>집에서 출발 전 최종 점검 — 여권·ETA 승인 메일·보조배터리(기내 휴대)·아이 기내 놀거리.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>인천공항 도착. 국제선은 3시간 전 도착 권장. 환전은 소액만(현지 카드 결제가 기본).</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>야간 직항 탑승(약 10시간 20분). 이륙 후 바로 시드니 시각으로 시계 변경, 아이들 취침 유도.</span></div>
+            <div class="daynote">💡 직항 야간편 기준. 낮 출발편이면 D1 일정을 하루씩 뒤로 미루고 마지막 날을 줄이세요.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D1</div><div class="dd">2/20</div><div class="dw">토요일</div></div>
+          <div class="daybody">
+            <h4>시드니 도착 · 하버 첫인상</h4>
+            <div class="slot"><span class="t am">오전</span><span>시드니 공항 도착. 입국심사 → 수하물 → 세관·검역(신고할 식품은 반드시 신고 줄로).</span></div>
+            <div class="slot"><span class="t am">오전</span><span>숙소 이동 후 짐만 맡기기(얼리 체크인은 대체로 불가). 근처에서 가볍게 브런치.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>서큘러키 → 오페라하우스 외관 → 로열 보태닉 가든 산책 → 미세스 맥콰리 포인트 전망.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>하버 근처에서 이른 저녁. 첫날은 무조건 짧게, 20~21시 취침.</span></div>
+            <div class="daynote">💡 도착일 낮잠은 30분 이내로. 시차가 +2시간뿐이라 햇빛만 충분히 쬐면 하루면 적응됩니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D2</div><div class="dd">2/21</div><div class="dw">일요일</div></div>
+          <div class="daybody">
+            <h4>타롱가 동물원 · 달링하버</h4>
+            <div class="slot"><span class="t am">오전</span><span>서큘러키에서 페리로 타롱가 동물원(12분). 배 자체가 관광 코스.</span></div>
+            <div class="slot"><span class="t am">오전</span><span>스카이사파리 곤돌라로 정상까지 올라간 뒤 내려오며 관람 — 아이 체력 절약의 핵심.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>코알라·캥거루·웜뱃 구역, 새 공연 관람 후 페리로 복귀.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>달링하버 이동 → 달링 쿼터 놀이터(무료 물놀이·대형 미끄럼틀)에서 2시간 방목.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>달링하버 또는 신축 시드니 피시마켓에서 저녁.</span></div>
+            <div class="daynote">💡 NSW주는 코알라 안기(홀딩)가 법으로 금지입니다. 코알라를 안아보려면 퀸즐랜드(케언즈·골드코스트) 일정이 필요합니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D3</div><div class="dd">2/22</div><div class="dw">월요일</div></div>
+          <div class="daybody">
+            <h4>블루마운틴 당일</h4>
+            <div class="slot"><span class="t am">오전</span><span>이른 출발. 가는 길에 페더데일 와일드라이프 파크 — 캥거루 먹이주기·코알라 근접 관람.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>카툼바 도착. 시닉 월드 — 세계 최급경사 철도(52°), 케이블웨이, 우림 보드워크.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>에코 포인트에서 세 자매봉(Three Sisters) 전망.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>시드니 복귀(약 2시간). 차 안에서 아이들 취침 가능성 높음.</span></div>
+            <div class="daynote">💡 렌터카면 자유롭고, 한인/현지 당일투어면 운전 부담이 없습니다. 산지는 시내보다 5~8℃ 낮으니 겉옷 필수.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D4</div><div class="dd">2/23</div><div class="dw">화요일</div></div>
+          <div class="daybody">
+            <h4>시드니 → 울룰루</h4>
+            <div class="slot"><span class="t am">오전</span><span>오전 국내선(약 3시간 20분). 중부 표준시로 한국 대비 +0시간 30분 수준(시차 계산 주의).</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>한낮 야외활동 금지 시간대. 리조트 풀에서 휴식.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>울룰루 선셋 뷰잉 — 바위 색이 시시각각 변하는 시간.</span></div>
+            <div class="daynote">💡 물은 1인당 하루 3L 이상 필요합니다. 파리가 매우 많아 방충 모자망(fly net)이 사실상 필수입니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D5</div><div class="dd">2/24</div><div class="dw">수요일</div></div>
+          <div class="daybody">
+            <h4>울룰루 · 카타추타</h4>
+            <div class="slot"><span class="t am">오전</span><span>일출 관람 후 이른 오전에만 무투줄루 워크(짧은 구간). 9시 이후 야외 금지에 가깝습니다.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>문화센터에서 아난구 원주민 문화 전시 — 실내 프로그램.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>필드 오브 라이트 또는 사운즈 오브 사일런스 디너.</span></div>
+            <div class="daynote">💡 울룰루 등반은 2019년부터 영구 금지입니다. 베이스 워크(10.6km)는 2월 기온에서 아이 동반 불가로 보세요.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D6</div><div class="dd">2/25</div><div class="dw">목요일</div></div>
+          <div class="daybody">
+            <h4>울룰루 → 시드니</h4>
+            <div class="slot"><span class="t am">오전</span><span>일출 또는 낙타 투어 후 체크아웃.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>오후 국내선으로 시드니 복귀.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>시드니 저녁.</span></div>
+            <div class="daynote">💡 울룰루발 시드니행은 매일 운항이 아닐 수 있습니다. 요일별 스케줄을 먼저 확인하고 일정을 짜세요.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D7</div><div class="dd">2/26</div><div class="dw">금요일</div></div>
+          <div class="daybody">
+            <h4>본다이 · 시내 마무리</h4>
+            <div class="slot"><span class="t am">오전</span><span>본다이 비치 — 아이용 본다이 아이스버그 풀(바닷물 수영장) 또는 백사장 물놀이.</span></div>
+            <div class="slot"><span class="t am">오전</span><span>본다이 → 브론테 해안 산책로(약 2km, 유모차 일부 구간 가능). 쿠지까지 6km는 아이 동반 시 무리.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>QVB·피트스트리트 몰 쇼핑, 시드니 타워 아이 전망대(선택).</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>마지막 저녁 — 하버 뷰 레스토랑 또는 숙소 근처 캐주얼.</span></div>
+            <div class="daynote">💡 호주 해변은 반드시 노란·빨간 깃발 사이에서만 수영. 이안류(rip current)가 강합니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D8</div><div class="dd">2/27</div><div class="dw">토요일</div></div>
+          <div class="daybody">
+            <h4>시드니 → 인천</h4>
+            <div class="slot"><span class="t am">오전</span><span>오전 출국편 기준 국제선 3시간 전 공항 도착. 숙소 체크아웃은 보통 10시.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>면세 구역에서 마지막 기념품. 기내 반입 액체 100ml 규정 재확인.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>같은 날 저녁 인천 도착(시차 -2시간). 다음 날 여유를 하루 두면 아이들 회복이 쉽습니다.</span></div>
+            <div class="daynote">💡 귀국 당일 아침 일정을 넣지 마세요. 공항 이동 + 4인 체크인은 생각보다 오래 걸립니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-F" role="tabpanel" aria-labelledby="tab-F" hidden>
+      <div class="card">
+        <div class="planhead">
+          <h3 style="margin:0">F안 — 3도시 강행 (시드니+케언즈+골드코스트)</h3>
+          <div class="planmeta"><span class="tag bad">비권장</span><span class="tag bad">이동 과다</span><span class="tag mid">욕심 코스</span></div>
+        </div>
+        <p style="color:var(--muted);margin:8px 0 14px">&#x27;한 번 가는 호주니까 다 보자&#x27;는 안. 검토는 해볼 만하지만, 8박에 국내선 3구간을 넣으면 실제 관광 시간보다 이동·체크인 시간이 더 길어집니다.</p>
+        <div class="grid2">
+          <div><h4 style="color:var(--green)">장점</h4><ul class="clean">
+            <li>산호초 + 테마파크 + 대도시를 모두 경험</li>
+            <li>사진으로 남는 다양성은 최대</li>
+          </ul></div>
+          <div><h4 style="color:var(--ochre)">단점 / 리스크</h4><ul class="clean">
+            <li>8박 중 3일이 사실상 이동일로 소진</li>
+            <li>숙소 3회 체크인/아웃 — 짐 싸기만 네 번</li>
+            <li>한 구간 지연이 전체 일정을 붕괴시킴</li>
+            <li>아이 컨디션 난조 시 회복할 여유가 없음</li>
+          </ul></div>
+        </div>
+      </div>
+
+      <div class="tl">
+        <div class="day">
+          <div class="daykey"><div class="dn">D0</div><div class="dd">2/19</div><div class="dw">금요일</div></div>
+          <div class="daybody">
+            <h4>인천 → 시드니</h4>
+            <div class="slot"><span class="t am">오전</span><span>집에서 출발 전 최종 점검 — 여권·ETA 승인 메일·보조배터리(기내 휴대)·아이 기내 놀거리.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>인천공항 도착. 국제선은 3시간 전 도착 권장. 환전은 소액만(현지 카드 결제가 기본).</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>야간 직항 탑승(약 10시간 20분). 이륙 후 바로 시드니 시각으로 시계 변경, 아이들 취침 유도.</span></div>
+            <div class="daynote">💡 직항 야간편 기준. 낮 출발편이면 D1 일정을 하루씩 뒤로 미루고 마지막 날을 줄이세요.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D1</div><div class="dd">2/20</div><div class="dw">토요일</div></div>
+          <div class="daybody">
+            <h4>시드니 도착 · 하버 첫인상</h4>
+            <div class="slot"><span class="t am">오전</span><span>시드니 공항 도착. 입국심사 → 수하물 → 세관·검역(신고할 식품은 반드시 신고 줄로).</span></div>
+            <div class="slot"><span class="t am">오전</span><span>숙소 이동 후 짐만 맡기기(얼리 체크인은 대체로 불가). 근처에서 가볍게 브런치.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>서큘러키 → 오페라하우스 외관 → 로열 보태닉 가든 산책 → 미세스 맥콰리 포인트 전망.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>하버 근처에서 이른 저녁. 첫날은 무조건 짧게, 20~21시 취침.</span></div>
+            <div class="daynote">💡 도착일 낮잠은 30분 이내로. 시차가 +2시간뿐이라 햇빛만 충분히 쬐면 하루면 적응됩니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D2</div><div class="dd">2/21</div><div class="dw">일요일</div></div>
+          <div class="daybody">
+            <h4>타롱가 동물원 · 달링하버</h4>
+            <div class="slot"><span class="t am">오전</span><span>서큘러키에서 페리로 타롱가 동물원(12분). 배 자체가 관광 코스.</span></div>
+            <div class="slot"><span class="t am">오전</span><span>스카이사파리 곤돌라로 정상까지 올라간 뒤 내려오며 관람 — 아이 체력 절약의 핵심.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>코알라·캥거루·웜뱃 구역, 새 공연 관람 후 페리로 복귀.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>달링하버 이동 → 달링 쿼터 놀이터(무료 물놀이·대형 미끄럼틀)에서 2시간 방목.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>달링하버 또는 신축 시드니 피시마켓에서 저녁.</span></div>
+            <div class="daynote">💡 NSW주는 코알라 안기(홀딩)가 법으로 금지입니다. 코알라를 안아보려면 퀸즐랜드(케언즈·골드코스트) 일정이 필요합니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D3</div><div class="dd">2/22</div><div class="dw">월요일</div></div>
+          <div class="daybody">
+            <h4>시드니 → 케언즈</h4>
+            <div class="slot"><span class="t am">오전</span><span>오전 국내선(3시간 10분).</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>에스플러네이드 라군, 나이트 마켓.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>일찍 취침 — 다음 날 리프 투어는 아침 7시대 집결.</span></div>
+            <div class="daynote">💡 블루마운틴을 포기해야 이 일정이 성립합니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D4</div><div class="dd">2/23</div><div class="dw">화요일</div></div>
+          <div class="daybody">
+            <h4>그레이트배리어리프</h4>
+            <div class="slot"><span class="t am">오전</span><span>그린 아일랜드 크루즈.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>스노클링·반잠수정.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>귀항 후 휴식.</span></div>
+            <div class="daynote">💡 쿠란다는 포기해야 합니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D5</div><div class="dd">2/24</div><div class="dw">수요일</div></div>
+          <div class="daybody">
+            <h4>케언즈 → 골드코스트</h4>
+            <div class="slot"><span class="t am">오전</span><span>오전 국내선(약 2시간 15분).</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>서퍼스 파라다이스 해변.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>체크인·저녁.</span></div>
+            <div class="daynote">💡 이 날은 관광 시간이 실질 3시간 남짓입니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D6</div><div class="dd">2/25</div><div class="dw">목요일</div></div>
+          <div class="daybody">
+            <h4>테마파크 1일</h4>
+            <div class="slot"><span class="t am">오전</span><span>무비월드 또는 씨월드 중 하나만.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>커럼빈에서 코알라 안기(시간이 되면).</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>짐 싸기.</span></div>
+            <div class="daynote">💡 테마파크 다음 날 바로 이동이라 피로가 누적됩니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D7</div><div class="dd">2/26</div><div class="dw">금요일</div></div>
+          <div class="daybody">
+            <h4>골드코스트 → 시드니</h4>
+            <div class="slot"><span class="t am">오전</span><span>오전 국내선(1시간 25분).</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>시드니 도착, 본다이 또는 달링하버.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>마지막 저녁.</span></div>
+            <div class="daynote">💡 귀국 전날 이동은 지연 시 대응 여지가 없습니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D8</div><div class="dd">2/27</div><div class="dw">토요일</div></div>
+          <div class="daybody">
+            <h4>시드니 자유일 · 예비일</h4>
+            <div class="slot"><span class="t am">오전</span><span>옵션 A: 호주 국립해양박물관(잠수함·군함 내부 탐험) — 비 오는 날 최고의 대안.</span></div>
+            <div class="slot"><span class="t am">오전</span><span>옵션 B: 시드니 올림픽 파크 또는 센테니얼 파크 자전거.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>옵션 C: 캔버라 당일(편도 3시간) — 퀘스타콘 과학관은 아이 만족도 최상, 단 이동이 깁니다.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>숙소 근처 마트(Coles·Woolworths) 장보기 + 숙소 저녁 — 외식비 절감 포인트.</span></div>
+            <div class="daynote">💡 9일 중 하루는 반드시 예비일로 비워두세요. 날씨·컨디션·놓친 일정을 흡수하는 완충 장치입니다.</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="daykey"><div class="dn">D9</div><div class="dd">2/28</div><div class="dw">일요일</div></div>
+          <div class="daybody">
+            <h4>시드니 → 인천</h4>
+            <div class="slot"><span class="t am">오전</span><span>오전 출국편 기준 국제선 3시간 전 공항 도착. 숙소 체크아웃은 보통 10시.</span></div>
+            <div class="slot"><span class="t pm">오후</span><span>면세 구역에서 마지막 기념품. 기내 반입 액체 100ml 규정 재확인.</span></div>
+            <div class="slot"><span class="t ev">저녁</span><span>같은 날 저녁 인천 도착(시차 -2시간). 다음 날 여유를 하루 두면 아이들 회복이 쉽습니다.</span></div>
+            <div class="daynote">💡 귀국 당일 아침 일정을 넣지 마세요. 공항 이동 + 4인 체크인은 생각보다 오래 걸립니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CITIES ================= -->
+<section id="cities">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">03</div>
+      <h2>도시별 가이드</h2>
+      <p>어떤 안을 택하든 시드니는 반드시 들어갑니다. 나머지는 선택한 동선에 해당하는 부분만 보시면 됩니다. 요금은 2026년 기준 대략치이며 현지에서 변동됩니다.</p>
+    </div>
+
+    <h3>시드니 — 전 일정 공통</h3>
+    <div class="grid2">
+      <div class="card">
+        <h4>아이와 반드시 갈 곳</h4>
+        <div class="spot"><div class="nm">타롱가 동물원</div><div class="meta">반나절 · 성인 약 AUD 51 / 아동 약 AUD 30 · 온라인 예매 할인</div><div class="ds">페리 + 곤돌라 + 하버 전망까지 묶인 사실상의 종합 코스. 코알라·캥거루·웜뱃을 한 번에.</div></div>
+        <div class="spot"><div class="nm">달링 쿼터 놀이터</div><div class="meta">2시간 · 무료</div><div class="ds">대형 워터플레이·미끄럼틀. 6~9세가 가장 오래 노는 곳. 여벌 옷 필수.</div></div>
+        <div class="spot"><div class="nm">맨리행 페리</div><div class="meta">편도 30분 · 오팔카드 일반 요금</div><div class="ds">유람선 요금의 1/10로 같은 풍경. 왕복 자체가 관광입니다.</div></div>
+        <div class="spot"><div class="nm">호주 국립해양박물관</div><div class="meta">2~3시간 · 실내</div><div class="ds">잠수함·구축함 내부를 직접 걸어 들어갑니다. 비 오는 날 1순위 대안.</div></div>
+        <div class="spot"><div class="nm">루나 파크</div><div class="meta">3시간 · 입장 무료, 라이드권 별도</div><div class="ds">하버브리지 아래 레트로 놀이공원. 야간 조명이 예쁩니다.</div></div>
+      </div>
+      <div class="card">
+        <h4>어른도 만족하는 곳</h4>
+        <div class="spot"><div class="nm">오페라하우스 &amp; 로열 보태닉 가든</div><div class="meta">2시간 · 정원 무료</div><div class="ds">미세스 맥콰리 포인트에서 오페라하우스+하버브리지가 한 프레임에 담깁니다.</div></div>
+        <div class="spot"><div class="nm">하버브리지 파일론 룩아웃</div><div class="meta">1시간 · 약 AUD 26</div><div class="ds">브리지클라임은 만 8세 이상·신장 제한이 있어 온 가족은 어렵습니다. 파일론은 전 연령 가능.</div></div>
+        <div class="spot"><div class="nm">더 록스 주말 마켓</div><div class="meta">토·일 · 무료</div><div class="ds">2/20(토), 2/21(일), 2/27(토) 일정과 잘 맞습니다.</div></div>
+        <div class="spot"><div class="nm">본다이 → 브론테 해안 산책로</div><div class="meta">2km · 무료</div><div class="ds">쿠지까지 6km 완주는 아이 동반 시 무리. 브론테에서 버스로 복귀하세요.</div></div>
+        <div class="spot"><div class="nm">시드니 피시마켓</div><div class="meta">2시간</div><div class="ds">굴·랍스터·피시앤칩스. 갈매기가 음식을 낚아채니 실내 좌석을 권합니다.</div></div>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <strong>코알라 안기, 주(州)별로 다릅니다</strong>
+      NSW(시드니)·빅토리아(멜버른)는 코알라를 안는 행위가 금지되어 있습니다. 안아보고 싶다면 <strong>퀸즐랜드</strong>(케언즈·골드코스트·브리즈번) 일정이 있어야 합니다.
+      단 어느 주에서든 캥거루 먹이주기·코알라 근접 관람은 가능합니다.
+    </div>
+
+    <h3 style="margin-top:30px">케언즈 (A·F안)</h3>
+    <div class="grid3">
+      <div class="card">
+        <h4>그레이트배리어리프</h4>
+        <ul class="clean">
+          <li><strong>그린 아일랜드</strong> — 왕복 페리 45분, 모래섬 + 얕은 산호. 가족 추천 1순위</li>
+          <li><strong>아우터 리프 폰툰</strong> — 편도 1.5~2시간, 산호 질은 최고지만 멀미 위험</li>
+          <li><strong>프랭클랜드 아일랜드</strong> — 인원 제한 소규모, 한적함</li>
+          <li>4인 기준 약 AUD 700~950 (점심·장비 포함 상품 기준)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>쿠란다 열대우림</h4>
+        <ul class="clean">
+          <li>스카이레일 곤돌라 + 시닉 레일웨이 기차 편도씩 조합이 정석</li>
+          <li>레인포레스테이션 — 수륙양용차 아미덕, 원주민 공연</li>
+          <li>코알라 가든에서 코알라 안기 가능(퀸즐랜드)</li>
+          <li>4인 약 AUD 500~700</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>시내 &amp; 근교</h4>
+        <ul class="clean">
+          <li><strong>에스플러네이드 라군</strong> — 무료 인공 수영장, 스팅어 시즌의 해답</li>
+          <li>하틀리스 크로커다일 어드벤처 — 악어 쇼</li>
+          <li>팜 코브·포트 더글라스 — 리조트 해변</li>
+          <li>데인트리 우림 — 세계 최고(最古) 열대우림, 당일 왕복 길어 선택</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout danger">
+      <strong>2월 케언즈 3대 리스크</strong>
+      ① 우기 — 월 강수 400mm 이상, 스콜성 폭우. ② 사이클론 — 2월은 시즌 한복판, 항공편 결항 가능.
+      ③ 스팅어 — 박스 해파리·이루칸지 출현기로 11~5월 해변 수영 제한. 리프 투어 시 <strong>전원 스팅어수트 착용</strong>(대부분 업체가 무료 대여).
+      항공·숙박은 <strong>무료 취소 가능 조건</strong>으로 잡아 두세요.
+    </div>
+
+    <h3 style="margin-top:30px">멜버른 (C안)</h3>
+    <div class="grid3">
+      <div class="card"><h4>그레이트 오션 로드</h4><ul class="clean">
+        <li>12사도 바위, 로크아드 협곡</li>
+        <li>케넷 리버 — 야생 코알라를 나무에서 봅니다</li>
+        <li>당일 왕복 약 12시간 / 1박 2일 권장</li>
+      </ul></div>
+      <div class="card"><h4>필립 아일랜드</h4><ul class="clean">
+        <li>펭귄 퍼레이드 — 해질 무렵, 촬영 금지</li>
+        <li>코알라 보호센터 보드워크</li>
+        <li>처칠 아일랜드 농장 체험</li>
+        <li>4인 일반석 약 AUD 120~160</li>
+      </ul></div>
+      <div class="card"><h4>시내</h4><ul class="clean">
+        <li>푸핑 빌리 증기기관차 — 아이 인기 최고</li>
+        <li>유레카 스카이덱 88층</li>
+        <li>퀸 빅토리아 마켓, 브라이튼 배싱 박스</li>
+        <li>시내 트램 프리 구역은 무료</li>
+      </ul></div>
+    </div>
+
+    <h3 style="margin-top:30px">골드코스트 · 브리즈번 (D·F안)</h3>
+    <div class="grid3">
+      <div class="card"><h4>테마파크</h4><ul class="clean">
+        <li>무비월드 — 히어로 퍼레이드, 스턴트 쇼</li>
+        <li>씨월드 — 돌고래·펭귄, 물놀이 기구</li>
+        <li>드림월드 — 놀이기구 + 동물원 결합형</li>
+        <li>1일 4인 약 AUD 320~400</li>
+      </ul></div>
+      <div class="card"><h4>동물 체험</h4><ul class="clean">
+        <li>커럼빈 야생동물 보호구역 — 코알라 안기, 앵무새 먹이주기</li>
+        <li>론 파인 코알라 보호구역(브리즈번) — 세계 최대</li>
+        <li>캥거루 방목장에서 직접 먹이주기 가능</li>
+      </ul></div>
+      <div class="card"><h4>그 외</h4><ul class="clean">
+        <li>서퍼스 파라다이스 — 파도 큼, 깃발 구역 엄수</li>
+        <li>스카이포인트 전망대</li>
+        <li>사우스뱅크 스트리트 비치(브리즈번) — 도심 무료 인공 해변</li>
+        <li>탬보린 마운틴 스카이워크</li>
+      </ul></div>
+    </div>
+
+    <h3 style="margin-top:30px">울룰루 (E안 · 2월 비권장)</h3>
+    <div class="card">
+      <div class="grid2">
+        <div>
+          <h4>볼거리</h4>
+          <ul class="clean">
+            <li>울룰루 일출·일몰 뷰잉 — 바위 색 변화</li>
+            <li>필드 오브 라이트 — 사막의 5만 개 조명 설치미술</li>
+            <li>카타추타(올가 바위) 워크</li>
+            <li>낙타 투어, 사운즈 오브 사일런스 야외 디너</li>
+          </ul>
+        </div>
+        <div>
+          <h4>2월에 권하지 않는 이유</h4>
+          <ul class="clean">
+            <li>평균 최고 37~38℃, 한낮 야외활동 사실상 제한</li>
+            <li>파리 떼가 극심 — 방충 모자망 필수</li>
+            <li>숙소가 리조트 단지 한 곳뿐이라 요금 방어가 안 됨</li>
+            <li>울룰루 등반은 2019년부터 영구 금지</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout" style="margin-bottom:0">울룰루는 <strong>5~9월(호주 겨울)</strong>이 최적기입니다. 이번 여행에서는 빼고, 훗날 아이들이 조금 더 크면 별도 여행으로 다녀오는 편을 권합니다.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DOCS / VISA ================= -->
+<section id="docs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">04</div>
+      <h2>비자 · 입국 · 검역</h2>
+      <p>호주는 무비자 입국이 불가능하고, 검역이 세계에서 가장 엄격한 나라 중 하나입니다. 이 섹션만큼은 출발 전에 가족 전원이 함께 읽어두시길 권합니다.</p>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>ETA (전자여행허가) — 4인 전원 각각 신청</h3>
+        <ul class="clean">
+          <li><strong>종류</strong> — 한국 여권 소지자는 ETA(subclass 601)</li>
+          <li><strong>신청 방법</strong> — 호주 정부 공식 앱 <code>Australian ETA</code>(iOS/Android)로만 신청. 여권 뒷면 칩을 휴대폰으로 스캔합니다</li>
+          <li><strong>수수료</strong> — 1인 약 AUD 20 (앱 내 결제). 4인 약 AUD 80</li>
+          <li><strong>유효기간</strong> — 승인일로부터 12개월, 복수 입국, 1회 최대 3개월 체류</li>
+          <li><strong>소요</strong> — 보통 수 분~수 시간, 드물게 며칠. <strong>최소 출발 2주 전</strong>에 처리하세요</li>
+          <li><strong>유아·아동도 예외 없음</strong> — 자녀 각각 본인 여권으로 별도 신청</li>
+        </ul>
+        <div class="callout warn" style="margin-bottom:0">
+          <strong>흔한 함정</strong>
+          ETA는 여권번호에 연결됩니다. 여행 전 여권을 재발급받으면 <strong>ETA를 다시 신청</strong>해야 합니다.
+          또한 여권 유효기간이 <strong>귀국일 기준 6개월 이상</strong> 남아 있는지 지금 확인하세요. 아이 여권은 유효기간이 5년이라 만료가 빨리 옵니다.
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>입국 신고 — 신고하면 통과, 숨기면 벌금</h3>
+        <p>기내에서 <strong>입국신고서(Incoming Passenger Card)</strong>를 받습니다. 음식·식물·동물성 제품 관련 항목은 <strong>의심되면 무조건 YES</strong>에 체크하세요. 신고한 물품은 검사 후 대부분 그대로 통과되지만, 미신고 적발은 현장 벌금 및 심한 경우 비자 취소로 이어집니다.</p>
+        <h4 style="margin-top:14px">반입 금지 (버리고 가세요)</h4>
+        <ul class="clean">
+          <li>육류·육가공품 전부 — 육포, 소시지, 햄, <strong>육류 성분이 든 라면 스프</strong></li>
+          <li>신선 과일·채소, 씨앗, 생 견과류, 구근·묘목</li>
+          <li>꿀·벌 제품, 생 계란 및 계란 함유 제품</li>
+          <li>일회용 전자담배(베이프) — 개인 반입도 금지</li>
+        </ul>
+        <h4 style="margin-top:14px">신고하면 대개 통과</h4>
+        <ul class="clean">
+          <li>포장된 과자·김·조미김, 커피·차, 분유(아동용)</li>
+          <li>상비약·처방약(성분 표시된 원포장 + 처방전 사본 권장)</li>
+          <li>목재 공예품, 한약재, 건어물</li>
+          <li>흙이 묻은 등산화·운동화 — 미리 씻어서 가져가면 편합니다</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>현금 신고 기준</strong> 가족 합산이 아니라 개인 기준으로, AUD 10,000 이상(외화 환산 포함) 반입 시 신고 의무가 있습니다. 일반적인 가족여행 규모에서는 해당되지 않습니다.
+    </div>
+
+    <h3 style="margin-top:26px">출발 전 타임라인</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>시점</th><th>할 일</th></tr></thead>
+        <tbody>
+          <tr><td><strong>D-180 (지금)</strong></td><td>가족 4인 여권 유효기간 확인 · 만료 임박 시 재발급 · 항공권 가격 모니터링 시작</td></tr>
+          <tr><td><strong>D-150</strong></td><td>플랜 확정 → 국제선 항공권 발권(2월은 비수기라 서두를 필요는 없으나 좌석 배치 선점에 유리)</td></tr>
+          <tr><td><strong>D-120</strong></td><td>숙소 예약(무료 취소 조건 우선) · 국내선 필요 시 세일 시기 대기</td></tr>
+          <tr><td><strong>D-60</strong></td><td>주요 액티비티 예약(리프 크루즈·펭귄 퍼레이드·테마파크) · 렌터카 예약 시 부스터시트 함께 신청</td></tr>
+          <tr><td><strong>D-30</strong></td><td>여행자보험 가입 · 국제운전면허증 발급 · eSIM 또는 로밍 결정</td></tr>
+          <tr><td><strong>D-14</strong></td><td><strong>ETA 4인 신청</strong> · 상비약 준비 · 예방접종/건강 점검</td></tr>
+          <tr><td><strong>D-7</strong></td><td>짐 싸기 시작 · 예약 바우처 출력·PDF 저장 · 카드사 해외사용 등록 확인</td></tr>
+          <tr><td><strong>D-1</strong></td><td>기상 예보 최종 확인 · 기내 가방 별도 구성 · 보조배터리 기내 휴대 분리</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PREP ================= -->
+<section id="prep">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">05</div>
+      <h2>준비물 체크리스트</h2>
+      <p>총 68개 항목. 체크 상태는 이 브라우저에 자동 저장되며, 인쇄하면 종이 체크리스트로도 쓸 수 있습니다.</p>
+    </div>
+    <div class="progwrap">
+      <div class="progbar"><i id="progFill"></i></div>
+      <div class="progtxt" id="progTxt">0 / 0</div>
+      <button class="btn" type="button" id="resetCk">전체 초기화</button>
+      <button class="btn" type="button" id="printBtn">인쇄 / PDF 저장</button>
+    </div>
+    <details class="ck-cat" data-cat="doc" open>
+      <summary><span>✈️</span><span>서류 · 금융</span><span class="catcount" data-count="doc">0 / 11</span></summary>
+      <div class="ck-list">
+        <div class="ck-item">
+          <input type="checkbox" id="ck-doc-0" data-cat="doc">
+          <label for="ck-doc-0">여권 4인분<span class="why">유효기간 귀국일 기준 6개월 이상. 아이 여권 만료일 특히 확인</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-doc-1" data-cat="doc">
+          <label for="ck-doc-1">ETA 승인 확인<span class="why">앱 내 승인 화면 캡처 + 이메일 보관. 출력본 1부</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-doc-2" data-cat="doc">
+          <label for="ck-doc-2">항공권 e-티켓 4인분<span class="why">PDF로 오프라인 저장. 공항 와이파이를 믿지 마세요</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-doc-3" data-cat="doc">
+          <label for="ck-doc-3">숙소 예약 바우처<span class="why">주소를 영문으로 저장 — 택시·우버 입력용</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-doc-4" data-cat="doc">
+          <label for="ck-doc-4">여행자보험 증권<span class="why">4인 가족 플랜. 의료비 한도와 아동 보장 범위 확인</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-doc-5" data-cat="doc">
+          <label for="ck-doc-5">국제운전면허증 + 한국 면허증<span class="why">렌터카 시 둘 다 지참해야 효력 발생</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-doc-6" data-cat="doc">
+          <label for="ck-doc-6">신용카드 2장 이상<span class="why">카드사 다르게. 해외 사용 등록·한도 확인</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-doc-7" data-cat="doc">
+          <label for="ck-doc-7">체크/트래블 카드<span class="why">AUD 충전식 카드가 환전보다 유리한 경우가 많음</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-doc-8" data-cat="doc">
+          <label for="ck-doc-8">현금 AUD 100~200<span class="why">대부분 카드 결제. 소액 시장·주차용 정도만</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-doc-9" data-cat="doc">
+          <label for="ck-doc-9">여권 사본 · 여권용 사진<span class="why">분실 대비. 클라우드에도 업로드</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-doc-10" data-cat="doc">
+          <label for="ck-doc-10">가족관계증명서 영문본<span class="why">부모 중 한 명만 동행하거나 성이 다를 때 대비(선택)</span></label>
+        </div>
+      </div>
+    </details>
+    <details class="ck-cat" data-cat="elec">
+      <summary><span>🔌</span><span>전자기기 · 통신</span><span class="catcount" data-count="elec">0 / 8</span></summary>
+      <div class="ck-list">
+        <div class="ck-item">
+          <input type="checkbox" id="ck-elec-0" data-cat="elec">
+          <label for="ck-elec-0">호주용 플러그 어댑터 (Type I)<span class="why">8자형 3핀. 호주 전압 230V/50Hz로 한국 기기는 대부분 변압기 없이 사용 가능</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-elec-1" data-cat="elec">
+          <label for="ck-elec-1">멀티탭 1개<span class="why">어댑터 하나로 온 가족 충전. 짐 무게 대비 효율 최고</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-elec-2" data-cat="elec">
+          <label for="ck-elec-2">보조배터리<span class="why">반드시 기내 휴대. 위탁 수하물 반입 금지(100Wh 이하)</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-elec-3" data-cat="elec">
+          <label for="ck-elec-3">충전 케이블 여유분<span class="why">현지 구매 시 비쌉니다</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-elec-4" data-cat="elec">
+          <label for="ck-elec-4">eSIM 또는 로밍<span class="why">Telstra가 외곽 커버리지 최강. 시내만이면 어디든 무방</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-elec-5" data-cat="elec">
+          <label for="ck-elec-5">아이 태블릿 + 어린이용 헤드폰<span class="why">10시간 비행의 생명줄. 넷플릭스 등 오프라인 다운로드 필수</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-elec-6" data-cat="elec">
+          <label for="ck-elec-6">헤드폰 분배기<span class="why">형제가 한 화면을 같이 볼 때</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-elec-7" data-cat="elec">
+          <label for="ck-elec-7">카메라 / 방수 액션캠<span class="why">스노클링·물놀이용</span></label>
+        </div>
+      </div>
+    </details>
+    <details class="ck-cat" data-cat="med">
+      <summary><span>💊</span><span>의약품 · 위생</span><span class="catcount" data-count="med">0 / 10</span></summary>
+      <div class="ck-list">
+        <div class="ck-item">
+          <input type="checkbox" id="ck-med-0" data-cat="med">
+          <label for="ck-med-0">아동 해열제 (시럽형)<span class="why">체중별 용량 확인. 현지 약국 구매는 브랜드·용량 체계가 달라 혼란</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-med-1" data-cat="med">
+          <label for="ck-med-1">성인 해열·진통제<span class="why">상비</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-med-2" data-cat="med">
+          <label for="ck-med-2">체온계<span class="why">부피 작은 전자식</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-med-3" data-cat="med">
+          <label for="ck-med-3">밴드 · 소독약 · 화상연고<span class="why">모래·바위에 쓸리는 일이 잦습니다</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-med-4" data-cat="med">
+          <label for="ck-med-4">멀미약<span class="why">리프 크루즈·장거리 드라이브용. 아동용 별도</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-med-5" data-cat="med">
+          <label for="ck-med-5">지사제 · 소화제<span class="why">물·음식이 바뀌면 흔합니다</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-med-6" data-cat="med">
+          <label for="ck-med-6">항히스타민제<span class="why">해파리·벌레 물림, 알레르기 대비</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-med-7" data-cat="med">
+          <label for="ck-med-7">모기·벌레 기피제<span class="why">케언즈·우림 지역 필수</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-med-8" data-cat="med">
+          <label for="ck-med-8">물티슈 · 손소독제<span class="why">야외 식사 잦음</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-med-9" data-cat="med">
+          <label for="ck-med-9">개인 상비약<span class="why">원포장 그대로 + 처방전 사본. 입국 시 신고</span></label>
+        </div>
+      </div>
+    </details>
+    <details class="ck-cat" data-cat="sun">
+      <summary><span>☀️</span><span>자외선 · 물놀이</span><span class="catcount" data-count="sun">0 / 10</span></summary>
+      <div class="ck-list">
+        <div class="ck-item">
+          <input type="checkbox" id="ck-sun-0" data-cat="sun">
+          <label for="ck-sun-0">SPF50+ 선크림 대용량<span class="why">호주 UV는 한국의 2~3배 체감. 2~3시간마다 재도포</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-sun-1" data-cat="sun">
+          <label for="ck-sun-1">아동용 래시가드 상하의<span class="why">선크림보다 확실한 방어. 물놀이 시 필수</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-sun-2" data-cat="sun">
+          <label for="ck-sun-2">챙 넓은 모자 4개<span class="why">야구모자로는 목·귀가 탑니다</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-sun-3" data-cat="sun">
+          <label for="ck-sun-3">선글라스<span class="why">아이용도. 자외선 차단 등급 확인</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-sun-4" data-cat="sun">
+          <label for="ck-sun-4">아쿠아슈즈 4켤레<span class="why">산호·조개 파편에 발 베이는 사고가 흔합니다</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-sun-5" data-cat="sun">
+          <label for="ck-sun-5">수영복 여벌<span class="why">매일 젖습니다. 1인 2벌 권장</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-sun-6" data-cat="sun">
+          <label for="ck-sun-6">비치타월 / 속건 타월<span class="why">숙소 타월 반출 금지인 곳이 많음</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-sun-7" data-cat="sun">
+          <label for="ck-sun-7">방수팩 · 지퍼백<span class="why">휴대폰·여권 보호</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-sun-8" data-cat="sun">
+          <label for="ck-sun-8">스팅어수트<span class="why">케언즈 일정 시. 대부분 투어 업체가 무료 대여하므로 현지 확인 후 결정</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-sun-9" data-cat="sun">
+          <label for="ck-sun-9">아동용 스노클 마스크<span class="why">사이즈 안 맞는 대여품은 물이 샙니다</span></label>
+        </div>
+      </div>
+    </details>
+    <details class="ck-cat" data-cat="cloth">
+      <summary><span>👕</span><span>의류</span><span class="catcount" data-count="cloth">0 / 8</span></summary>
+      <div class="ck-list">
+        <div class="ck-item">
+          <input type="checkbox" id="ck-cloth-0" data-cat="cloth">
+          <label for="ck-cloth-0">반팔·반바지 (1인 4~5벌)<span class="why">늦여름. 숙소 세탁기 사용 전제로 최소화</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-cloth-1" data-cat="cloth">
+          <label for="ck-cloth-1">얇은 긴팔 1~2벌<span class="why">실내·차량 냉방이 매우 강합니다</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-cloth-2" data-cat="cloth">
+          <label for="ck-cloth-2">바람막이 또는 우비<span class="why">소나기 잦음. 접이식 우산보다 우비가 아이에게 편함</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-cloth-3" data-cat="cloth">
+          <label for="ck-cloth-3">블루마운틴/필립아일랜드용 겉옷<span class="why">산지·야간 해안은 시내보다 5~8℃ 낮습니다</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-cloth-4" data-cat="cloth">
+          <label for="ck-cloth-4">편한 운동화 4켤레<span class="why">하루 1만 보 이상 걷습니다</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-cloth-5" data-cat="cloth">
+          <label for="ck-cloth-5">샌들 / 슬리퍼<span class="why">해변·숙소용</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-cloth-6" data-cat="cloth">
+          <label for="ck-cloth-6">잠옷 · 속옷<span class="why">세탁 주기 고려</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-cloth-7" data-cat="cloth">
+          <label for="ck-cloth-7">약간 갖춰 입을 옷 1벌<span class="why">전망대 레스토랑·디너 크루즈 대비</span></label>
+        </div>
+      </div>
+    </details>
+    <details class="ck-cat" data-cat="kid">
+      <summary><span>🧒</span><span>아이 전용</span><span class="catcount" data-count="kid">0 / 8</span></summary>
+      <div class="ck-list">
+        <div class="ck-item">
+          <input type="checkbox" id="ck-kid-0" data-cat="kid">
+          <label for="ck-kid-0">부스터 시트 / 카시트<span class="why">만 7세 미만은 법적 의무. 렌터카 대여 시 사전 신청(1일 약 AUD 10)</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-kid-1" data-cat="kid">
+          <label for="ck-kid-1">접이식 유모차<span class="why">6~7세는 불필요하나 동물원·테마파크 장거리 대비 초경량이면 유용</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-kid-2" data-cat="kid">
+          <label for="ck-kid-2">아이 비상연락 카드<span class="why">부모 이름·현지 번호·숙소 주소를 영문으로. 주머니에 넣어주기</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-kid-3" data-cat="kid">
+          <label for="ck-kid-3">한국 간식 (포장 완제품)<span class="why">입맛 안 맞을 때의 보험. 육류 성분 없는 것만</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-kid-4" data-cat="kid">
+          <label for="ck-kid-4">물병 (텀블러)<span class="why">호주 공공 음수대가 잘 되어 있어 물값 절약</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-kid-5" data-cat="kid">
+          <label for="ck-kid-5">색칠북 · 스티커 · 작은 보드게임<span class="why">기내·식당 대기 시간</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-kid-6" data-cat="kid">
+          <label for="ck-kid-6">아이 이름표 / 미아방지 밴드<span class="why">테마파크·해변에서</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-kid-7" data-cat="kid">
+          <label for="ck-kid-7">좋아하는 인형 1개<span class="why">낯선 잠자리 적응용</span></label>
+        </div>
+      </div>
+    </details>
+    <details class="ck-cat" data-cat="cabin">
+      <summary><span>🎒</span><span>기내 가방</span><span class="catcount" data-count="cabin">0 / 7</span></summary>
+      <div class="ck-list">
+        <div class="ck-item">
+          <input type="checkbox" id="ck-cabin-0" data-cat="cabin">
+          <label for="ck-cabin-0">여권·지갑·보조배터리<span class="why">절대 위탁 수하물에 넣지 않기</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-cabin-1" data-cat="cabin">
+          <label for="ck-cabin-1">1인 1세트 갈아입을 옷<span class="why">수하물 지연 대비</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-cabin-2" data-cat="cabin">
+          <label for="ck-cabin-2">목베개 · 담요 · 안대<span class="why">야간 비행 10시간</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-cabin-3" data-cat="cabin">
+          <label for="ck-cabin-3">사탕 / 껌<span class="why">이착륙 시 아이 귀 통증 완화</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-cabin-4" data-cat="cabin">
+          <label for="ck-cabin-4">칫솔 세트<span class="why">도착 직전 정비</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-cabin-5" data-cat="cabin">
+          <label for="ck-cabin-5">액체류 100ml 이하<span class="why">투명 지퍼백 1L 한 개에 정리</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-cabin-6" data-cat="cabin">
+          <label for="ck-cabin-6">입국신고서용 볼펜<span class="why">기내에서 나눠주지 않는 경우가 있습니다</span></label>
+        </div>
+      </div>
+    </details>
+    <details class="ck-cat" data-cat="home">
+      <summary><span>🏠</span><span>집 정리 · 마지막 점검</span><span class="catcount" data-count="home">0 / 6</span></summary>
+      <div class="ck-list">
+        <div class="ck-item">
+          <input type="checkbox" id="ck-home-0" data-cat="home">
+          <label for="ck-home-0">가스 밸브 · 전기 차단</label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-home-1" data-cat="home">
+          <label for="ck-home-1">우편물 / 택배 정지</label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-home-2" data-cat="home">
+          <label for="ck-home-2">휴대폰 로밍 또는 eSIM 활성화<span class="why">출발 당일 활성화 시점 확인</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-home-3" data-cat="home">
+          <label for="ck-home-3">카드사 해외 결제 알림 설정<span class="why">부정 사용 조기 감지</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-home-4" data-cat="home">
+          <label for="ck-home-4">일정·숙소 정보를 가족·지인에게 공유<span class="why">비상시 연락 경로</span></label>
+        </div>
+        <div class="ck-item">
+          <input type="checkbox" id="ck-home-5" data-cat="home">
+          <label for="ck-home-5">클라우드 백업<span class="why">여권 사본·바우처·보험증권</span></label>
+        </div>
+      </div>
+    </details>
+
+    <div class="callout danger" style="margin-top:18px">
+      <strong>짐 쌀 때 다시 확인할 것 세 가지</strong>
+      ① 보조배터리는 <strong>기내 휴대</strong>(위탁 금지) ② 육류 성분 식품은 <strong>아예 빼기</strong> ③ 만 7세 미만 자녀의 <strong>카시트/부스터</strong> — 렌터카를 쓴다면 예약 단계에서 신청해야 합니다.
+    </div>
+  </div>
+</section>
+
+<!-- ================= BUDGET ================= -->
+<section id="budget">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">06</div>
+      <h2>예산 추정</h2>
+      <p>아직 확정된 예약이 없으므로, 4인 가족 8박 9일 기준의 <strong>일반적인 시세 범위</strong>로 계산합니다. 플랜과 등급을 바꿔 보면서 감을 잡는 용도로 쓰세요.</p>
+    </div>
+
+    <div class="card">
+      <div class="ctrls">
+        <div class="field">
+          <label for="bPlan">여행 플랜</label>
+          <select id="bPlan">
+            <option value="A">A안 · 시드니 + 케언즈</option>
+            <option value="B">B안 · 시드니 집중</option>
+            <option value="C">C안 · 시드니 + 멜버른</option>
+            <option value="D">D안 · 시드니 + 골드코스트</option>
+            <option value="E">E안 · 시드니 + 울룰루</option>
+            <option value="F">F안 · 3도시 강행</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="bTier">여행 등급</label>
+          <select id="bTier">
+            <option value="0">알뜰형 · 경유편 + 저가 숙소</option>
+            <option value="1" selected>표준형 · 직항 + 3~4성 아파트먼트</option>
+            <option value="2">여유형 · 프리미엄 숙소 + 유료 투어</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="bRate">환율 (1 AUD = ? 원)</label>
+          <input type="number" id="bRate" value="950" min="500" max="1500" step="10">
+        </div>
+      </div>
+
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>항목</th><th class="num">4인 합계 (원)</th><th class="num">현지 통화 환산</th><th>비고</th></tr></thead>
+          <tbody id="bBody"></tbody>
+        </table>
+      </div>
+
+      <div class="total">
+        <span style="font-weight:700">예상 총액 (4인)</span>
+        <span class="big" id="bTotal">—</span>
+        <span style="color:var(--muted);font-size:.85rem" id="bPer">1인당 —</span>
+      </div>
+      <p style="margin-top:12px"><small>※ 항공·숙박 시세는 예약 시점에 따라 30% 이상 변동합니다. 쇼핑·기념품·예비비는 포함되어 있지 않으므로 총액의 10~15%를 별도로 잡아두세요.</small></p>
+    </div>
+
+    <div class="grid2" style="margin-top:18px">
+      <div class="card">
+        <h3>비용을 줄이는 실전 포인트</h3>
+        <ul class="clean">
+          <li><strong>주방 있는 아파트먼트형 숙소</strong> — 4인 가족은 아침·일부 저녁을 해결하는 것만으로 식비가 30~40% 줄어듭니다</li>
+          <li><strong>Coles / Woolworths 장보기</strong> — 호주 외식은 메인 1접시가 AUD 25~35, 4인 외식 한 끼 AUD 120은 각오해야 합니다</li>
+          <li><strong>오팔카드 일일·주간 상한</strong> — 하루 여러 번 타도 상한에서 멈춥니다. 별도 교통패스를 살 필요가 없습니다</li>
+          <li><strong>국내선은 세일 시기</strong> — 젯스타·버진 세일 때 편도 요금이 절반이 되기도 합니다</li>
+          <li><strong>무료 명소 활용</strong> — 보태닉 가든, 달링 쿼터 놀이터, 해변, 에스플러네이드 라군, 세인트킬다 펭귄</li>
+          <li><strong>액티비티 온라인 사전 예매</strong> — 현장가 대비 10~20% 저렴한 경우가 많습니다</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>현지 물가 감각</h3>
+        <div class="tablewrap" style="border:none">
+          <table style="min-width:auto">
+            <tbody>
+              <tr><td>카페 커피 1잔</td><td class="num">AUD 5~6</td></tr>
+              <tr><td>피시앤칩스 1인분</td><td class="num">AUD 18~25</td></tr>
+              <tr><td>레스토랑 메인 1접시</td><td class="num">AUD 28~40</td></tr>
+              <tr><td>맥도날드 세트</td><td class="num">AUD 13~16</td></tr>
+              <tr><td>생수 500ml</td><td class="num">AUD 3~4</td></tr>
+              <tr><td>택시/우버 (시내 10분)</td><td class="num">AUD 20~30</td></tr>
+              <tr><td>공항↔시내 기차 (성인 1인)</td><td class="num">약 AUD 22</td></tr>
+              <tr><td>렌터카 (중형 SUV 1일)</td><td class="num">AUD 80~130</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:10px;margin-bottom:0"><small>호주는 팁 문화가 없습니다. 계산서 금액만 지불하면 됩니다.</small></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KIDS ================= -->
+<section id="kids">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">07</div>
+      <h2>아이 동반 실전 팁</h2>
+      <p>8~9세 남아, 6~7세 여아 기준입니다. 두 아이의 체력·관심사 차이가 일정 설계의 가장 큰 변수입니다.</p>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>일정 설계 원칙</h3>
+        <ul class="clean">
+          <li><strong>하루에 큰 일정 하나</strong> — 오전 메인 + 오후 자유가 실패하지 않는 공식입니다</li>
+          <li><strong>물놀이를 이틀에 한 번</strong> — 아이들은 유적보다 물을 기억합니다</li>
+          <li><strong>예비일 1일 확보</strong> — 9일 중 하루는 비워 두세요</li>
+          <li><strong>이동은 오전에</strong> — 오후 이동은 피로 + 지연 리스크가 겹칩니다</li>
+          <li><strong>저녁은 18시 이전</strong> — 호주 식당은 생각보다 일찍 닫고, 아이들도 일찍 지칩니다</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>안전 — 이것만은 지키기</h3>
+        <ul class="clean">
+          <li><strong>해변은 깃발 사이에서만</strong> — 노란·빨간 깃발 구역이 인명구조원 감시 구역입니다. 이안류 사고가 매년 발생합니다</li>
+          <li><strong>자외선</strong> — 현지 구호 &quot;Slip(옷) Slop(선크림) Slap(모자) Seek(그늘) Slide(선글라스)&quot;를 그대로 따르세요</li>
+          <li><strong>야생동물에 손대지 않기</strong> — 거미·뱀·해파리. 예쁘다고 만지지 않도록 미리 교육</li>
+          <li><strong>차량은 좌측통행</strong> — 길 건널 때 아이가 오른쪽부터 보도록 반복해서 알려주세요</li>
+          <li><strong>미아 대비</strong> — 매일 아침 아이 옷차림을 사진으로 찍어두면 신고 시 결정적입니다</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>시차 적응 (+2시간)</h3>
+        <ul class="clean">
+          <li>기내 탑승 즉시 시계를 시드니 시각으로 변경</li>
+          <li>도착 첫날 낮잠은 30분 이내, 야외에서 햇빛 쬐기</li>
+          <li>첫날 밤은 20~21시 취침 유도</li>
+          <li>퀸즐랜드(케언즈·골드코스트) 이동 시 1시간 되돌리기 — 투어 집결 시간 착오 주의</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>10시간 비행 버티기</h3>
+        <ul class="clean">
+          <li>좌석은 예매 즉시 지정 — 4인이면 2+2 또는 3+1 배치를 미리 확보</li>
+          <li>태블릿 오프라인 다운로드 + 어린이용 헤드폰 + 분배기</li>
+          <li>새 장난감 하나를 기내에서 처음 개봉 — 집중 시간이 확연히 깁니다</li>
+          <li>이착륙 시 사탕·껌·물로 귀 통증 완화</li>
+          <li>기내식은 예약 시 아동식(Child Meal) 신청 가능</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>아플 때</h3>
+        <ul class="clean">
+          <li>응급은 <strong>000</strong> (경찰·소방·구급 통합)</li>
+          <li>가벼운 증상은 약국(Chemist Warehouse 등) 또는 워크인 클리닉</li>
+          <li>호주 의료비는 매우 비쌉니다 — <strong>여행자보험은 선택이 아니라 필수</strong></li>
+          <li>진료 시 영수증·진단서를 반드시 챙겨야 보험 청구가 됩니다</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>식사</h3>
+        <ul class="clean">
+          <li>한국 식당은 시드니 스트라스필드·이스트우드 일대에 밀집</li>
+          <li>푸드코트·베이커리가 가족 단위에는 가장 편합니다</li>
+          <li>호주 물은 수돗물 음용 가능 — 텀블러로 공공 음수대 활용</li>
+          <li>아이 입맛 보험용 포장 간식은 육류 성분이 없는 것으로</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRANSPORT ================= -->
+<section id="transport">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">08</div>
+      <h2>교통</h2>
+      <p>시드니 시내는 대중교통이 충분하고, 근교 당일치기는 렌터카나 투어가 유리합니다.</p>
+    </div>
+
+    <div class="grid3">
+      <div class="card">
+        <h3>오팔 (Opal) — 시드니 대중교통</h3>
+        <ul class="clean">
+          <li>기차·버스·페리·경전철 통합. 별도 카드 없이 <strong>신용카드·휴대폰 터치</strong>로도 탑승 가능</li>
+          <li>단, 아동 할인(4~15세)을 받으려면 <strong>실물 Child/Youth 오팔카드</strong>가 필요합니다. 공항·역 매점에서 구입</li>
+          <li>만 4세 미만 무료</li>
+          <li>하루 요금 상한, 주간 요금 상한이 적용되어 많이 탈수록 유리합니다</li>
+          <li>탑승 시 탭온, 하차 시 <strong>탭오프</strong>를 잊으면 최대 요금이 부과됩니다</li>
+        </ul>
+        <div class="callout warn" style="margin-bottom:0"><strong>공항선 주의</strong> 시드니 공항역은 별도 이용료(Station Access Fee)가 붙어 1인 약 AUD 22입니다. 4인이면 약 AUD 88 — 짐까지 있다면 <strong>우버/맥시캡이 더 저렴하고 편합니다.</strong></div>
+      </div>
+
+      <div class="card">
+        <h3>국내선</h3>
+        <ul class="clean">
+          <li>주요 항공사 — 콴타스, 버진 오스트레일리아, 젯스타(저가)</li>
+          <li>저가 항공은 <strong>위탁 수하물이 별도 요금</strong>. 4인 가족이면 총액으로 비교하세요</li>
+          <li>시드니→케언즈 약 3시간 10분 / →멜버른 약 1시간 35분 / →골드코스트 약 1시간 25분 / →울룰루 약 3시간 20분</li>
+          <li>국내선은 보통 출발 1시간~1시간 30분 전 도착이면 충분</li>
+          <li>퀸즐랜드행은 시차 1시간 변화 — 도착 시각 계산 주의</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>렌터카</h3>
+        <ul class="clean">
+          <li><strong>좌측통행 · 우핸들</strong>. 로터리(라운드어바웃) 우선순위 규칙을 미리 익히세요</li>
+          <li>국제운전면허증 + 한국 면허증 + 여권 + 신용카드(보증금) 필요</li>
+          <li><strong>만 7세 미만 아동은 카시트/부스터 법적 의무</strong> — 예약 시 함께 신청(1일 약 AUD 10)</li>
+          <li>속도 단속이 매우 엄격하고 벌금이 높습니다. 스쿨존은 특히 주의</li>
+          <li>시드니 도심 주차비가 매우 비쌉니다 — 근교 나가는 날만 빌리는 편이 합리적</li>
+          <li>유료도로(톨) 자동 청구 여부를 대여 시 확인</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>렌터카 vs 투어, 이렇게 고르세요</strong>
+      블루마운틴·포트 스티븐스·그레이트 오션 로드처럼 왕복 4~12시간인 일정은 <strong>운전자가 지치면 여행 전체가 무너집니다.</strong>
+      성인 두 명이 교대 운전 가능하면 렌터카가 자유롭고, 한 명만 운전한다면 당일투어가 안전합니다.
+      시드니 시내 일정만이라면 렌터카는 오히려 부담입니다.
+    </div>
+  </div>
+</section>
+
+<!-- ================= EMERGENCY ================= -->
+<section id="emergency">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">09</div>
+      <h2>비상 연락처 · 유용한 링크</h2>
+      <p>출발 전 이 섹션을 인쇄하거나 휴대폰에 저장해 두세요. 번호는 출발 전 공식 홈페이지에서 한 번 더 확인하시길 권합니다.</p>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>긴급</h3>
+        <div class="tablewrap" style="border:none">
+          <table style="min-width:auto">
+            <tbody>
+              <tr><td><strong>호주 통합 긴급전화</strong><br><small>경찰 · 소방 · 구급차</small></td><td class="num" style="font-size:1.3rem;font-weight:800;color:var(--danger)">000</td></tr>
+              <tr><td>휴대폰에서 연결 안 될 때</td><td class="num">112</td></tr>
+              <tr><td>건강 상담 (24시간, 무료)<br><small>healthdirect</small></td><td class="num">1800 022 222</td></tr>
+              <tr><td>외교부 영사콜센터 (한국, 24시간)</td><td class="num">+82-2-3210-0404</td></tr>
+              <tr><td>주시드니 대한민국 총영사관<br><small>Level 10, 44 Market St, Sydney</small></td><td class="num">+61-2-9210-0234</td></tr>
+              <tr><td>주호주 대한민국 대사관 (캔버라)</td><td class="num">+61-2-6270-4100</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout danger" style="margin-bottom:0">
+          <strong>여권 분실 시</strong>
+          ① 현지 경찰서에서 분실 신고서(Police Report) 발급 → ② 총영사관에서 여권 또는 여행증명서 발급.
+          여권 사본·사진을 미리 준비해 두면 처리가 훨씬 빠릅니다.
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>출발 전 확인할 공식 사이트</h3>
+        <ul class="clean">
+          <li><strong>호주 ETA 신청</strong> — 공식 앱 <code>Australian ETA</code> (앱스토어/플레이스토어)</li>
+          <li><strong>호주 내무부 (검역·반입 규정)</strong> — abf.gov.au / agriculture.gov.au</li>
+          <li><strong>호주 기상청 BOM</strong> — bom.gov.au (사이클론·강수 예보)</li>
+          <li><strong>외교부 해외안전여행</strong> — 0404.go.kr (여행경보·영사콜센터 앱)</li>
+          <li><strong>시드니 대중교통</strong> — transportnsw.info (오팔 요금·노선)</li>
+          <li><strong>시드니 총영사관</strong> — overseas.mofa.go.kr (긴급전화·공지 확인)</li>
+        </ul>
+        <h4 style="margin-top:14px">현지에서 유용한 앱</h4>
+        <ul class="clean">
+          <li>Uber / DiDi — 택시 대안</li>
+          <li>Opal Travel — 잔액·노선 확인</li>
+          <li>BeachSafe — 해변별 안전 정보·깃발 운영 여부</li>
+          <li>Google Maps 오프라인 지도 — 출발 전 시드니 영역 다운로드</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout warn" style="margin-top:16px">
+      <strong>이 페이지의 정보에 대하여</strong>
+      요금·운영시간·규정은 2026년 기준으로 정리한 참고값이며, 2027년 2월까지 변동될 수 있습니다.
+      특히 <strong>비자·검역 규정, 항공 스케줄, 입장료</strong>는 예약·출발 직전에 공식 사이트에서 반드시 재확인하세요.
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>호주 가족여행 플래너</strong> · 2027.02.19 – 02.28 · 시드니 IN/OUT · 4인 가족</p>
+    <p>체크리스트 상태는 이 브라우저에만 저장됩니다. 다른 기기에서는 다시 체크해야 합니다.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- theme ---------- */
+  var root = document.documentElement, KEY_THEME = "aus2027-theme";
+  try {
+    var saved = localStorage.getItem(KEY_THEME);
+    if (saved === "dark" || saved === "light") root.setAttribute("data-theme", saved);
+    else root.removeAttribute("data-theme");
+  } catch (err) { /* storage blocked */ }
+
+  document.getElementById("themeBtn").addEventListener("click", function(){
+    var isDark = root.getAttribute("data-theme") === "dark" ||
+      (!root.hasAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = isDark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem(KEY_THEME, next); } catch (err) {}
+  });
+
+  /* ---------- D-day ---------- */
+  (function(){
+    var el = document.getElementById("dday");
+    var dep = new Date("2027-02-19T00:00:00+09:00");
+    var today = new Date();
+    var t0 = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
+    var d0 = Date.UTC(dep.getFullYear(), dep.getMonth(), dep.getDate());
+    var diff = Math.round((d0 - t0) / 86400000);
+    el.textContent = diff > 0 ? "D-" + diff : (diff === 0 ? "D-DAY" : "D+" + Math.abs(diff));
+  })();
+
+  /* ---------- plan tabs ---------- */
+  (function(){
+    var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab[role='tab']"));
+    if (!tabs.length) return;
+    function select(id){
+      tabs.forEach(function(t){
+        var on = t.id === "tab-" + id;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        var panel = document.getElementById("panel-" + t.id.slice(4));
+        if (panel) panel.hidden = !on;
+      });
+      try { localStorage.setItem("aus2027-plan", id); } catch (err) {}
+    }
+    tabs.forEach(function(t){
+      t.addEventListener("click", function(){
+        var id = t.id.slice(4);
+        select(id);
+        var bp = document.getElementById("bPlan");
+        if (bp && bp.value !== id) {
+          bp.value = id;
+          bp.dispatchEvent(new Event("change"));
+        }
+      });
+    });
+    try {
+      var last = localStorage.getItem("aus2027-plan");
+      if (last && document.getElementById("tab-" + last)) select(last);
+    } catch (err) {}
+  })();
+
+  /* ---------- checklist ---------- */
+  (function(){
+    var KEY = "aus2027-checklist";
+    var boxes = Array.prototype.slice.call(document.querySelectorAll(".ck-item input[type='checkbox']"));
+    if (!boxes.length) return;
+    var fill = document.getElementById("progFill");
+    var txt  = document.getElementById("progTxt");
+
+    function load(){
+      try { return JSON.parse(localStorage.getItem(KEY) || "{}") || {}; }
+      catch (err) { return {}; }
+    }
+    function save(state){
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (err) {}
+    }
+    function render(){
+      var done = 0, byCat = {};
+      boxes.forEach(function(b){
+        var cat = b.getAttribute("data-cat");
+        if (!byCat[cat]) byCat[cat] = { d: 0, n: 0 };
+        byCat[cat].n++;
+        if (b.checked) { done++; byCat[cat].d++; }
+      });
+      txt.textContent = done + " / " + boxes.length;
+      fill.style.width = (boxes.length ? (done / boxes.length * 100) : 0).toFixed(1) + "%";
+      Object.keys(byCat).forEach(function(cat){
+        var el = document.querySelector("[data-count='" + cat + "']");
+        if (el) el.textContent = byCat[cat].d + " / " + byCat[cat].n;
+      });
+    }
+
+    var state = load();
+    boxes.forEach(function(b){
+      if (state[b.id]) b.checked = true;
+      b.addEventListener("change", function(){
+        var s = load();
+        if (b.checked) s[b.id] = 1; else delete s[b.id];
+        save(s);
+        render();
+      });
+    });
+    render();
+
+    document.getElementById("resetCk").addEventListener("click", function(){
+      if (!window.confirm("체크한 항목을 모두 초기화할까요?")) return;
+      boxes.forEach(function(b){ b.checked = false; });
+      save({});
+      render();
+    });
+    document.getElementById("printBtn").addEventListener("click", function(){
+      document.querySelectorAll("details.ck-cat").forEach(function(d){ d.open = true; });
+      window.print();
+    });
+  })();
+
+  /* ---------- budget ---------- */
+  (function(){
+    // 4인 가족 8박 9일 기준, 단위: 만원. [알뜰, 표준, 여유]
+    var DATA = {
+      A: { air:[520,640,900], dom:[90,130,180], stay:[130,210,360], food:[110,160,240], act:[120,190,280], etc:[60,90,140] },
+      B: { air:[520,640,900], dom:[0,0,0],      stay:[120,190,340], food:[110,160,240], act:[80,130,200],  etc:[50,80,130] },
+      C: { air:[520,640,900], dom:[70,105,150], stay:[125,200,350], food:[110,160,240], act:[100,160,240], etc:[70,100,160] },
+      D: { air:[520,640,900], dom:[80,120,170], stay:[125,200,350], food:[110,160,240], act:[140,220,320], etc:[60,90,140] },
+      E: { air:[520,640,900], dom:[140,200,280],stay:[150,260,480], food:[120,175,260], act:[130,200,320], etc:[70,110,170] },
+      F: { air:[520,640,900], dom:[160,230,320],stay:[130,210,370], food:[115,170,250], act:[160,250,380], etc:[80,120,190] }
+    };
+    var ROWS = [
+      { k:"air",  name:"국제선 항공 (인천↔시드니 왕복)", local:false, note:"성인 2 + 아동 2. 아동은 성인가의 약 75~90%" },
+      { k:"dom",  name:"호주 국내선",                    local:true,  note:"세일 시기에 잡으면 절반까지 내려갑니다" },
+      { k:"stay", name:"숙박 (8박)",                     local:true,  note:"주방 있는 아파트먼트형 2베드룸 기준" },
+      { k:"food", name:"식비 (9일)",                     local:true,  note:"아침 숙소 + 점심 간편 + 저녁 외식 혼합" },
+      { k:"act",  name:"입장료 · 액티비티 · 투어",       local:true,  note:"동물원·크루즈·테마파크 등" },
+      { k:"etc",  name:"현지 교통 · 보험 · ETA · 기타",  local:true,  note:"오팔카드, 공항 이동, 여행자보험 4인, ETA 4인" }
+    ];
+
+    var selPlan = document.getElementById("bPlan");
+    var selTier = document.getElementById("bTier");
+    var inRate  = document.getElementById("bRate");
+    var body    = document.getElementById("bBody");
+    var elTotal = document.getElementById("bTotal");
+    var elPer   = document.getElementById("bPer");
+
+    function won(manwon){ return (manwon * 10000).toLocaleString("ko-KR"); }
+
+    function render(){
+      var plan = DATA[selPlan.value];
+      var tier = parseInt(selTier.value, 10);
+      var rate = parseFloat(inRate.value);
+      if (!isFinite(rate) || rate <= 0) rate = 950;
+
+      var total = 0, html = "";
+      ROWS.forEach(function(r){
+        var v = plan[r.k][tier];
+        total += v;
+        var aud = r.local && v > 0 ? "약 AUD " + Math.round(v * 10000 / rate).toLocaleString("en-US") : "한국에서 결제";
+        html += "<tr><td>" + r.name + "</td>" +
+                "<td class='num'>" + won(v) + "</td>" +
+                "<td class='num' style='color:var(--muted)'>" + aud + "</td>" +
+                "<td><small>" + r.note + "</small></td></tr>";
+      });
+      body.innerHTML = html;
+      elTotal.textContent = won(total) + "원";
+      elPer.textContent = "1인당 약 " + won(Math.round(total / 4)) + "원";
+    }
+
+    [selPlan, selTier, inRate].forEach(function(el){
+      el.addEventListener("change", render);
+      el.addEventListener("input", render);
+    });
+
+    // 플랜 탭 선택과 동기화
+    try {
+      var last = localStorage.getItem("aus2027-plan");
+      if (last && DATA[last]) selPlan.value = last;
+    } catch (err) {}
+    render();
+  })();
+
+})();
+</script>
+</body>
+</html>
